@@ -63,8 +63,8 @@ use yii\helpers\Url
                                 ]) ?>
                             </div>
                             <div class="col-lg-5">
-                                <a href="<?= Url::to(['site/login_m']) ?>">验证码登陆/</a>
-                                <a href="<?= Url::to(['site/register']) ?>">没有账号？注册一个</a>
+                                <a href="<?= Url::to(['site/about']) ?>">验证码登陆/</a>
+                                <a href="<?= Url::to(['site/about']) ?>">没有账号？注册一个</a>
                             </div>
 
 

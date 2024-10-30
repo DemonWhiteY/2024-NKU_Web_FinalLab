@@ -7,8 +7,7 @@ use app\assets\AppAsset;
 use app\widgets\Alert;
 use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
-use yii\bootstrap5\Nav;
-use yii\bootstrap5\NavBar;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 
@@ -34,59 +33,85 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <body class="d-flex flex-column h-100">
     <?php $this->beginBody() ?>
 
-    <header id="header">
-        <?php
-
-
-        NavBar::begin([
-            'brandLabel' => Yii::$app->name,
-            'brandUrl' => Yii::$app->homeUrl,
-            'options' => ['class' => 'navbar-expand-md navbar-light bg-light fixed-top']
-        ]);
-
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-nav me-auto'],
-            'items' => [
-                ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'Services', 'url' => ['/site/services']],
-                ['label' => 'Portfolio', 'url' => ['/site/portfolio']],
-                [
-                    'label' => 'Pages',
-                    'items' => [
-                        ['label' => 'About', 'url' => ['/site/about']],
-                        ['label' => 'Coming Soon', 'url' => ['/site/coming-soon']],
-                        ['label' => '404', 'url' => ['/site/error']],
-                    ],
-                ],
-                [
-                    'label' => 'Blog',
-                    'items' => [
-                        ['label' => 'Blog 3 Column', 'url' => ['/blog/index']],
-                        ['label' => 'Blog 4 Column', 'url' => ['/blog/4-column']],
-                        // 添加其他博客链接...
-                    ],
-                ],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
-            ]
-        ]);
-
-        echo '<div class="header-lang-dropdown">';
-        echo '<button type="button" class="btn btn-link dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">EN</button>';
-        echo '<ul class="dropdown-menu" aria-labelledby="dropdownLang">';
-        echo '<li><a class="dropdown-item" href="#">EN</a></li>';
-        echo '<li><a class="dropdown-item" href="#">BN</a></li>';
-        echo '<li><a class="dropdown-item" href="#">FR</a></li>';
-        echo '</ul></div>';
-
-        echo '<div class="header-action-btn">';
-        echo Html::a('Get A Quote', ['/site/contact'], ['class' => 'btn btn-primary']);
-        echo '</div>';
-
-
-
-        NavBar::end();
-        ?>
+    <!--== Start Header Wrapper ==-->
+    <header class="header-wrapper">
+        <div class="header-area header-default header-transparent sticky-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-4 col-sm-6 col-lg-2">
+                        <div class="header-logo-area">
+                            <a href="">
+                                <img class="logo-main" src="static/picture/logo.webp" alt="Logo" width="161"
+                                    height="48">
+                                <img class="logo-light" src="static/picture/logo-light.webp" alt="Logo" width="161"
+                                    height="48">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 d-none d-lg-block">
+                        <div class="header-navigation-area">
+                            <ul class="main-menu nav position-relative">
+                                <li><a href="<?= Url::to(['site/index']) ?>">Home</a></li>
+                                <li class="has-submenu"><a href="services.html">Services</a>
+                                    <ul class="submenu-nav">
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="service-details.html">Service Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="projects.html">Portfolio</a>
+                                    <ul class="submenu-nav">
+                                        <li><a href="projects.html">Portfolio</a></li>
+                                        <li><a href="project-details.html">Portfolio Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="">Pages</a>
+                                    <ul class="submenu-nav">
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="coming-soon.html">Coming soon</a></li>
+                                        <li><a href="page-not-found.html">404</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="blog.html">Blog</a>
+                                    <ul class="submenu-nav">
+                                        <li><a href="blog.html">Blog 3 Column</a></li>
+                                        <li><a href="blog-4-column.html">Blog 4 Column</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                        <li><a href="blog.html">Blog No Sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-8 col-sm-6 col-lg-3">
+                        <div class="header-action-area">
+                            <div class="header-lang-dropdown">
+                                <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang"
+                                    data-bs-toggle="dropdown" aria-expanded="false">EN</button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                                    <li class="dropdown-item active">EN</li>
+                                    <li class="dropdown-item">BN</li>
+                                    <li class="dropdown-item">FR</li>
+                                </ul>
+                            </div>
+                            <div class="header-action-btn">
+                                <a class="btn-theme" href="<?= Url::to(['site/login']) ?>"><span>登陆</span></a>
+                            </div>
+                            <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                                <span class="icon-line"></span>
+                                <span class="icon-line"></span>
+                                <span class="icon-line"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+    <!--== End Header Wrapper ==-->
 
     <main id="main" class="flex-shrink-0" role="main">
         <div>
@@ -98,14 +123,118 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </div>
     </main>
 
-    <footer id="footer" class="mt-auto py-3 bg-light">
-        <div class="container">
-            <div class="row text-muted">
-                <div class="col-md-6 text-center text-md-start">&copy; My Company <?= date('Y') ?></div>
-                <div class="col-md-6 text-center text-md-end"><?= Yii::powered() ?></div>
+    <footer class="footer-area default-style">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Latest Post</h4>
+                            <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#dividerId-1">Latest Post</h4>
+                            <div id="dividerId-1" class="collapse widget-collapse-body">
+                                <div class="widget-blog-wrap">
+                                    <div class="blog-post-item">
+                                        <div class="content">
+                                            <h4 class="title"><i class="icon icofont-minus"></i> <a
+                                                    href="blog-details.html">With WooLentor's drag and drop
+                                                    interface</a></h4>
+                                            <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i>
+                                                    28/05/2022</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="blog-post-item">
+                                        <div class="content">
+                                            <h4 class="title"><i class="icon icofont-minus"></i> <a
+                                                    href="blog-details.html">Lorem has been industry standard ever
+                                                    since.</a></h4>
+                                            <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i>
+                                                    31/05/2022</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
+                        <div class="widget-item">
+                            <h4 class="widget-title">All Services</h4>
+                            <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#dividerId-2">All Services</h4>
+                            <div id="dividerId-2" class="collapse widget-collapse-body">
+                                <nav class="widget-menu-wrap">
+                                    <ul class="nav-menu nav">
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Commercial
+                                                Movers</a></li>
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Air Freight
+                                                Services</a></li>
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Drone
+                                                Services</a></li>
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Road Freight
+                                                Services</a></li>
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Warehousing
+                                                Services</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3">
+                        <div class="widget-item ml-40 ml-lg-20 md-ml-0">
+                            <h4 class="widget-title">Important</h4>
+                            <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#dividerId-3">Important</h4>
+                            <div id="dividerId-3" class="collapse widget-collapse-body">
+                                <nav class="widget-menu-wrap">
+                                    <ul class="nav-menu nav">
+                                        <li><a href="about.html"><i class="icofont-minus"></i>About Maskat</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>Price & Planning</a></li>
+                                        <li><a href="contact.html"><i class="icofont-minus"></i>Client Support</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>Privacy & Policy</a></li>
+                                        <li><a href="contact.html"><i class="icofont-minus"></i>Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 col-xl-2">
+                        <div class="widget-item ml-35 lg-ml-0">
+                            <h4 class="widget-title">Follow Us</h4>
+                            <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#dividerId-4">Follow Us</h4>
+                            <div id="dividerId-4" class="collapse widget-collapse-body">
+                                <nav class="widget-menu-wrap">
+                                    <ul class="nav-menu nav">
+                                        <li><a href=""><i class="icofont-minus"></i>Facebook</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>Twitter</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>Instragram</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>Youtube</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>Medium</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="widget-copyright">
+                                <p>Copyright &copy; 2022.Company name All rights reserved.<a target="_blank"
+                                        href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+    <!--== End Footer Area Wrapper ==-->
 
     <?php $this->endBody() ?>
     <!--=== Modernizr Min Js ===-->
