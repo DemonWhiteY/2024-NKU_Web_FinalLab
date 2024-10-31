@@ -2,53 +2,62 @@
 
 namespace app\models;
 
-class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
+use Yii;
+
+/**
+ * This is the model class for table "User".
+ *
+ * @property int $UserID
+ * @property int $UserName
+ * @property string $Password
+ * @property int $UserPhone
+ */
+class User extends \yii\db\ActiveRecord
 {
-    public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
-
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    ];
-
-
     /**
      * {@inheritdoc}
      */
-    public static function findIdentity($id)
+    public static function tableName()
     {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+        return 'User';
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function findIdentityByAccessToken($token, $type = null)
+    public function rules()
     {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
-        }
-
-        return null;
+        return [
+            [['UserID', 'UserName', 'Password', 'UserPhone'], 'required'],
+            [['UserID', 'UserName', 'UserPhone'], 'integer'],
+            [['Password'], 'string', 'max' => 20],
+            [['UserPhone'], 'unique'],
+            [['UserID'], 'unique'],
+        ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'UserID' => 'User ID',
+            'UserName' => 'User Name',
+            'Password' => 'Password',
+            'UserPhone' => 'User Phone',
+        ];
+    }
+
+    public static function findIdentity($UserID)
+    {
+        return isset(self::$users[$UserID]) ? new static(self::$users[$UserID]) : null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+
 
     /**
      * Finds user by username
@@ -56,10 +65,10 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      * @param string $username
      * @return static|null
      */
-    public static function findByUsername($username)
+    public static function findByUsername($UserName)
     {
         foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
+            if (strcasecmp($user['UserName'], $UserName) === 0) {
                 return new static($user);
             }
         }
@@ -72,24 +81,13 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function getId()
     {
-        return $this->id;
+        return $this->UserID;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getAuthKey()
-    {
-        return $this->authKey;
-    }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function validateAuthKey($authKey)
-    {
-        return $this->authKey === $authKey;
-    }
+
+
+
 
     /**
      * Validates password
@@ -99,6 +97,6 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
-        return $this->password === $password;
+        return $this->Password === $password;
     }
 }

@@ -51,20 +51,20 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <div class="col-lg-7 d-none d-lg-block">
                         <div class="header-navigation-area">
                             <ul class="main-menu nav position-relative">
-                                <li><a href="<?= Url::to(['site/index']) ?>">Home</a></li>
-                                <li class="has-submenu"><a href="services.html">Services</a>
+                                <li><a href="<?= Url::to(['site/index']) ?>">主页</a></li>
+                                <li class="has-submenu"><a href="services.html">产品</a>
                                     <ul class="submenu-nav">
-                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="services.html">产品</a></li>
                                         <li><a href="service-details.html">Service Details</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="projects.html">Portfolio</a>
+                                <li class="has-submenu"><a href="projects.html">案例</a>
                                     <ul class="submenu-nav">
                                         <li><a href="projects.html">Portfolio</a></li>
                                         <li><a href="project-details.html">Portfolio Details</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="">Pages</a>
+                                <li class="has-submenu"><a href="">订购</a>
                                     <ul class="submenu-nav">
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="coming-soon.html">Coming soon</a></li>
@@ -81,7 +81,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <li><a href="blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="contact.html">联系我们</a></li>
                             </ul>
                         </div>
                     </div>

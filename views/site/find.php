@@ -38,7 +38,7 @@ use yii\helpers\Url
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="section-title">
-                            <h2 class="title">注册</h2>
+                            <h2 class="title">登陆</h2>
                             <p>Lorem Ipsum is simply dummy text the printing galley of type <br>and scrambed make
                                 type specimen.</p>
                         </div>
@@ -56,27 +56,16 @@ use yii\helpers\Url
 
                             <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-
                             <?= $form->field($model, 'password')->passwordInput() ?>
-                            <?= $form->field($model, 'confirmPassword')->passwordInput() ?>
-
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <?= $form->field($model, 'VerificationCode')->passwordInput() ?>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="row mb-5"></div>
-                                    <div>
-                                        <?= Html::submitButton('发送验证码 <i
-                                            class="icofont-rounded-double-right mr-0"></i></button>', ['class' => 'btn btn-theme', 'name' => 'login-button']) ?>
-                                    </div>
-                                </div>
-
+                            <div class="col-lg-5">
+                                <?= $form->field($model, 'rememberMe')->checkbox([
+                                    'template' => "<div class=\"custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
+                                ]) ?>
                             </div>
-
-
-
+                            <div class="col-lg-5">
+                                <a href="<?= Url::to(['site/abou']) ?>">验证码登陆/</a>
+                                <a href="<?= Url::to(['site/abou']) ?>">没有账号？注册一个</a>
+                            </div>
 
 
 
