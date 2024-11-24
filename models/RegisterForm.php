@@ -15,6 +15,8 @@ class RegisterForm extends Model
 {
     public $username;
     public $password;
+
+    public $email;
     public $confirmPassword;
 
     public $VerificationCode;
@@ -28,10 +30,14 @@ class RegisterForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password', 'confirmPassword', 'VerificationCode'], 'required'],
+            [['username', 'password', 'confirmPassword', 'email', 'VerificationCode'], 'required'],
             // password is validated by validatePassword()
+            ['username', 'string', 'min' => 4, 'max' => 20, 'tooShort' => '用户名应输入6-20个字符或数字', 'tooLong' => '用户名应输入6-20个字符或数字'],
+            ['password', 'string', 'min' => 8, 'max' => 30, 'tooShort' => '密码应输入6-20个字符或数字', 'tooLong' => '密码应输入6-20个字符或数字'],
+            ['email', 'validateEmail'],
+            ['username', 'validateUsername'],
             ['password', 'validatePassword'],
-            ['VerificationCode', 'Verification'],
+            ['confirmPassword', 'Verification'],
         ];
     }
 
@@ -47,15 +53,44 @@ class RegisterForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
 
-            if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+            if ($user == true) {
+                $this->addError($attribute, '用户名已存在');
             }
         }
     }
 
-    public function Verification()
+    public function validateEmail($attribute, $params)
     {
+        // 1. 验证邮箱格式是否有效
+        if (!filter_var($this->$attribute, FILTER_VALIDATE_EMAIL)) {
+            $this->addError($attribute, '无效的邮箱地址');
+            return;
+        }
 
+        // 2. 检查邮箱是否已存在于数据库中
+        $exists = User::find()->where([$attribute => $this->$attribute])->exists();
+        if ($exists) {
+            $this->addError($attribute, '邮箱已经被使用');
+        }
+    }
+
+
+    public function validateUsername($attribute, $params)
+    {
+        if (!$this->hasErrors()) {
+            $user = $this->getUser();
+
+            if ($user == true) {
+                $this->addError($attribute, '用户名已存在');
+            }
+        }
+    }
+
+    public function Verification($attribute, $params)
+    {
+        if ($this->password != $this->confirmPassword) {
+            $this->addError($attribute, '密码输入不一致');
+        }
     }
 
     /**
@@ -65,7 +100,18 @@ class RegisterForm extends Model
     public function Register()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            $user = new User();
+            $user->username = $this->username;
+            $user->setPassword($this->password);
+            $user->email = $this->email;
+            $user->save();
+            if (!$user->save()) {
+                $user->refresh();
+                var_dump($user->getErrors());
+                exit;
+            }
+
+            return Yii::$app->user->login($this->getUser());
         }
         return false;
     }

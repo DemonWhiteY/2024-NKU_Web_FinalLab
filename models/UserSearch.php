@@ -9,6 +9,20 @@ use app\models\User;
 /**
  * UserSearch represents the model behind the search form of `app\models\User`.
  */
+
+
+/**
+ * This is the model class for table "user".
+ *
+ * @property int $id
+ * @property string $username
+ * @property string $password_hash
+ * @property string $auth_key
+ * @property string $email
+ * @property int $status
+ * @property int $created_at
+ * @property int $updated_at
+ */
 class UserSearch extends User
 {
     /**

@@ -20,9 +20,9 @@ use yii\helpers\Url
             <div class="row align-items-center">
                 <div class="col-lg-12 m-auto">
                     <div class="page-title-content text-center">
-                        <h2 class="title">Login</h2>
-                        <div class="bread-crumbs"><a href="index.html"> Home </a><span class="breadcrumb-sep"> //
-                            </span><span class="active"> Login</span></div>
+                        <h2 class="title">登陆</h2>
+                        <div class="bread-crumbs"><a href="index.html"> 主页 </a><span class="breadcrumb-sep"> //
+                            </span><span class="active">登陆</span></div>
                     </div>
                 </div>
             </div>
