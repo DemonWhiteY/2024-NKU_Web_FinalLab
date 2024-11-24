@@ -417,10 +417,7 @@ table p {
 
 /*-------- Button Style Css --------*/
 .btn-theme {
-  background-color: #ff5e14;
-  border-color: #ff5e14;
-  border-radius: 2px;
-  color: #fff;
+
   display: inline-block;
   font-size: 17px;
   font-weight: 500;
@@ -433,6 +430,20 @@ table p {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+}
+
+.color_defult {
+  background-color: #ff5e14;
+  border-color: #ff5e14;
+  border-radius: 2px;
+  color: #fff;
+}
+
+.color_light {
+  background-color: #fdddcf;
+  border-color: #ff5e14;
+  border-radius: 2px;
+  color: #e81313;
 }
 
 .btn-theme .icon {
@@ -2427,18 +2438,19 @@ table p {
 }
 
 .has-submenu>a {
+  color: red;
   position: relative;
 }
 
 .has-submenu>a:after {
-  content: "";
+  content: "";
   color: #fcdcea;
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
   font-family: "FontAwesome";
   position: absolute;
-  right: 11px;
+  left: -50px;
   top: 7px;
 }
 
@@ -2521,6 +2533,7 @@ table p {
 }
 
 .has-submenu .submenu-nav>li:hover:after {
+  display: none;
   color: #ff5e14 !important;
 }
 
@@ -2541,7 +2554,7 @@ table p {
 }
 
 .has-submenu .submenu-nav>li.has-submenu:after {
-  content: "";
+  content: "";
   color: #656565;
   font-size: 15px;
   line-height: 1.2;
@@ -2605,7 +2618,7 @@ table p {
 }
 
 .has-submenu .submenu-nav-mega .mega-menu-item ul li.feature a:before {
-  content: "";
+  content: "";
   position: absolute;
   font-family: "FontAwesome";
   color: #ff5e14;
@@ -2750,6 +2763,15 @@ table p {
   padding-left: 28px;
 }
 
+
+
+
+
+.header-User-area>li>a>p {
+  color: white;
+  font-size: 20px;
+}
+
 .header-area.header-default .header-navigation-area .main-menu {
   margin-top: -1px;
   left: 0;
@@ -2761,6 +2783,15 @@ table p {
 }
 
 .header-area.header-default .header-navigation-area .main-menu>li>a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0;
+  margin: 0 25.63px;
+  text-transform: capitalize;
+}
+
+.header-area.header-default .header-action-area>li>a {
   color: #fff;
   font-weight: 500;
   font-size: 17px;
@@ -2792,6 +2823,33 @@ table p {
 
 .header-area.header-default .header-navigation-area .main-menu>li.active>a:after {
   color: #ff5e14;
+}
+
+.header-wrapper {
+  position: relative;
+}
+
+
+
+
+.orange-trapezoid {
+  width: 400px;
+  /* 设置梯形的宽度 */
+  height: 100%;
+  /* 设置梯形的高度 */
+  background-color: orange;
+  /* 设置梯形的颜色为橙色 */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+  /* 使用clip-path来创建梯形 */
+  position: absolute;
+  right: 0;
+  /* 使其位于最右侧 */
+  top: 50%;
+  /* 垂直居中 */
+  transform: translateY(-50%);
+  /* 微调位置，使其精确居中 */
+  z-index: 1;
+  overflow: visible;
 }
 
 .header-area.header-default .header-navigation-area .main-menu .has-submenu>a:after {
@@ -2849,6 +2907,15 @@ table p {
   color: #000;
 }
 
+.header-area.sticky-header .header-action-area>li>a {
+  color: #1a1515;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0;
+  margin: 0 25.63px;
+  text-transform: capitalize;
+}
+
 .header-area.sticky-header.sticky .header-navigation-area .main-menu>li>a:after {
   display: none;
 }
@@ -2900,11 +2967,20 @@ table p {
   color: #414141;
 }
 
+
+.header-area.sticky-header.sticky.header-action-area>li>a>p {
+  color: black;
+  font-size: 25px;
+}
+
+
 .header-area.sticky-header.sticky .header-action-area .btn-menu:hover {
   background-color: #05103b;
   border-color: #05103b;
   color: #fff;
 }
+
+
 
 .header-area.sticky-header.sticky .header-action-area .btn-menu:hover span {
   background-color: #fff;
@@ -2927,6 +3003,12 @@ table p {
 }
 
 .header-area.sticky-header.sticky .header-action-area .header-lang-dropdown .btn-lang {
+  background-color: #05103b;
+  border-color: #05103b;
+  color: #fff;
+}
+
+.header-area.sticky-header.sticky .header-action-area .header-lang-dropdown .btn-item-lang {
   color: #000;
 }
 
@@ -3037,10 +3119,22 @@ table p {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  overflow: visible;
 }
 
 .header-action-area .header-lang-dropdown {
   line-height: 1;
+}
+
+.header-action-area.header-lang-dropdow.form-control.select-User {
+  -webkit-appearance: none;
+  background-color: #3785d3;
+  -moz-appearance: none;
+  appearance: none;
+  border-right: 1px solid #ebecf0;
+  cursor: pointer;
+  height: 85px;
+  position: relative;
 }
 
 .header-action-area .header-lang-dropdown .btn-lang {
@@ -3066,6 +3160,11 @@ table p {
   -o-transition: all 0.3s ease-in-out;
 }
 
+.header-action-area>li>a>p {
+  color: white;
+  font-size: 25px;
+}
+
 @media only screen and (max-width: 1199px) {
   .header-action-area .header-lang-dropdown .btn-lang {
     font-size: 15px;
@@ -3083,7 +3182,7 @@ table p {
 .header-action-area .header-lang-dropdown .btn-lang.dropdown-toggle:after {
   border: none;
   content: "";
-  color: #fff;
+  color: #fbfafa;
   font-size: 17px;
   font-weight: 500;
   line-height: 1;
@@ -3111,14 +3210,14 @@ table p {
 }
 
 .header-action-area .header-lang-dropdown .dropdown-menu {
-  background-color: #fff;
+  background-color: #05103b;
   border-radius: 3px;
   border: none;
   -webkit-box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.3);
   margin: 0;
-  min-width: 60px;
-  max-width: 60px;
+  min-width: 100px;
+  max-width: 100px;
   overflow: hidden;
   padding: 0;
   left: -6px !important;
@@ -3133,10 +3232,11 @@ table p {
 
 .header-action-area .header-lang-dropdown .dropdown-menu .dropdown-item {
   background-color: transparent;
+  color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
-  font-size: 16px;
-  padding: 6px 10px;
+  font-size: 17px;
+  padding: 6px 20px;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -3153,7 +3253,7 @@ table p {
 .header-action-area .header-lang-dropdown .dropdown-menu .dropdown-item.active,
 .header-action-area .header-lang-dropdown .dropdown-menu .dropdown-item:active,
 .header-action-area .header-lang-dropdown .dropdown-menu .dropdown-item:hover {
-  color: #ff5e14;
+  color: #240e04;
   background-color: transparent;
 }
 
@@ -5889,6 +5989,10 @@ table p {
   position: relative;
 }
 
+
+
+
+
 @media only screen and (max-width: 991px) {
   .tracking-form-wrap .tracking-searchbox .form-control.select-dropdown {
     height: 70px;
@@ -5955,11 +6059,27 @@ table p {
   pointer-events: none;
 }
 
+.track-dropdown_item {
+  color: #656565;
+  /* 设置文本颜色 */
+  font-size: 16px;
+  /* 设置字体大小，确保与图标匹配 */
+  font-weight: 500;
+  /* 设置字体粗细 */
+  line-height: 1;
+  /* 设置行高 */
+  font-family: "IcoFont", sans-serif;
+  /* 使用与图标相同的字体 */
+}
+
 @media only screen and (max-width: 767px) {
   .tracking-form-wrap .tracking-searchbox .track-dropdown:after {
     right: 19px;
   }
 }
+
+
+
 
 .tracking-form-wrap .tracking-searchbox .btn-theme {
   font-size: 17px;

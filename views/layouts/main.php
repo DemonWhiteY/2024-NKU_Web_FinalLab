@@ -81,24 +81,40 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <li><a href="blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">联系我们</a></li>
+                                <?php if (!Yii::$app->user->isGuest): ?>
+
+                                    <li class="has-submenu"><a href="services.html">
+                                            欢迎！<?= Yii::$app->user->identity->username ?>
+                                        </a>
+                                        <ul class="submenu-nav">
+                                            <li><a href="<?= \yii\helpers\Url::to(['site/logout']) ?>" data-method="post"
+                                                    class="btn btn-danger">
+                                                    登出
+                                                </a></li>
+                                            <li><a href="service-details.html">修改信息</a></li>
+                                            <li><a href="service-details.html">反馈问题</a></li>
+                                        </ul>
+                                    </li>
+
+                                <?php endif; ?>
+
                             </ul>
                         </div>
                     </div>
                     <div class="col-8 col-sm-6 col-lg-3">
                         <div class="header-action-area">
-                            <div class="header-lang-dropdown">
-                                <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang"
-                                    data-bs-toggle="dropdown" aria-expanded="false">EN</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                                    <li class="dropdown-item active">EN</li>
-                                    <li class="dropdown-item">BN</li>
-                                    <li class="dropdown-item">FR</li>
-                                </ul>
-                            </div>
-                            <div class="header-action-btn">
-                                <a class="btn-theme" href="<?= Url::to(['site/login']) ?>"><span>登陆</span></a>
-                            </div>
+
+                            <?php if (Yii::$app->user->isGuest): ?>
+                                <!-- If the user is not logged in, show the login button -->
+                                <div class="header-action-btn">
+                                    <a class="btn-theme color_defult"
+                                        href="<?= Url::to(['site/login']) ?>"><span>登陆</span></a>
+                                </div>
+                                <div class="header-action-btn">
+                                    <a class="btn-theme color_light"
+                                        href="<?= Url::to(['site/register']) ?>"><span>注册</span></a>
+                                </div>
+                            <?php endif; ?>
                             <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                                 <span class="icon-line"></span>
@@ -107,6 +123,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             </button>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
 
-/** @var app\models\LoginForm $model */
+/** @var app\models\RegisterForm $model */
 
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
@@ -20,9 +20,9 @@ use yii\helpers\Url
             <div class="row align-items-center">
                 <div class="col-lg-12 m-auto">
                     <div class="page-title-content text-center">
-                        <h2 class="title">Login</h2>
-                        <div class="bread-crumbs"><a href="index.html"> Home </a><span class="breadcrumb-sep"> //
-                            </span><span class="active"> Login</span></div>
+                        <h2 class="title">注册</h2>
+                        <div class="bread-crumbs"><a href="index.html"> 主页</a><span class="breadcrumb-sep"> //
+                            </span><span class="active">注册</span></div>
                     </div>
                 </div>
             </div>
@@ -59,10 +59,11 @@ use yii\helpers\Url
 
                             <?= $form->field($model, 'password')->passwordInput() ?>
                             <?= $form->field($model, 'confirmPassword')->passwordInput() ?>
+                            <?= $form->field($model, 'email')->textInput() ?>
 
                             <div class="row">
                                 <div class="col-lg-8">
-                                    <?= $form->field($model, 'VerificationCode')->passwordInput() ?>
+                                    <?= $form->field($model, 'VerificationCode')->textInput() ?>
                                 </div>
 
                                 <div class="col-lg-4">
@@ -84,7 +85,7 @@ use yii\helpers\Url
 
                             <div class="form-group">
                                 <div>
-                                    <?= Html::submitButton('登陆 <i
+                                    <?= Html::submitButton('注册 <i
                                             class="icofont-rounded-double-right mr-0"></i></button>', ['class' => 'btn btn-theme', 'name' => 'login-button']) ?>
                                 </div>
 
