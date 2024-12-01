@@ -66,11 +66,6 @@ use yii\helpers\Url
                                 <a href="<?= Url::to(['site/find']) ?>">验证码登陆/</a>
                                 <a href="<?= Url::to(['site/register']) ?>">没有账号？注册一个</a>
                             </div>
-
-
-
-
-
                             <div class="form-group">
                                 <div>
                                     <?= Html::submitButton('登陆 <i

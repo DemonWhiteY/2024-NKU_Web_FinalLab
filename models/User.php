@@ -10,6 +10,7 @@ use yii\web\IdentityInterface;
  * This is the model class for table "user".
  *
  * @property int $id
+ * @property int $role
  * @property string $username
  * @property string $password_hash
  * @property string $auth_key
@@ -73,12 +74,19 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->auth_key; // 返回用户的 auth_key
     }
 
+    public function getRole()
+    {
+        return $this->role; // 返回用户的 auth_key
+    }
+
     /**
      * 验证 auth_key
      *
      * @param string $authKey
      * @return bool 是否验证通过
      */
+
+
     public function validateAuthKey($authKey)
     {
         return $this->auth_key === $authKey; // 比对存储的 auth_key 和传入的是否一致
@@ -152,6 +160,7 @@ class User extends ActiveRecord implements IdentityInterface
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'role' => 'Role'
         ];
     }
 

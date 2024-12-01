@@ -65,6 +65,11 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionerror()
+    {
+        return $this->render('error');
+    }
+
     /**
      * Login action.
      *
@@ -72,13 +77,13 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        // if (!Yii::$app->user->isGuest) {
-        //     return $this->goHome();
-        // }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            if ($model->user->getRole() == 0) {
+                return Yii::$app->response->redirect(['backend/backend/index']);
+            } else
+                return $this->goBack();
         }
 
         $model->password = '';
@@ -152,6 +157,32 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+
+    public function actionInitPermissions()
+    {
+        $auth = Yii::$app->authManager();
+
+        // 创建权限
+        $enterbackend = $auth->createPermission('enterbackend');
+        $enterbackend->description = '进入后台';
+        $auth->add($enterbackend);
+
+
+
+        // 创建角色
+        $admin = $auth->createRole('admin');
+        $auth->add($admin);
+
+        $user = $auth->createRole('user');
+        $auth->add($user);
+
+        // 给角色分配权限
+        $auth->addChild($admin, $enterbackend);
+
+    }
+
+
 
 
 }
