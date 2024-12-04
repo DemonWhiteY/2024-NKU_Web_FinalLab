@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\RegisterForm;
 use app\models\ContactForm;
+use app\models\EmailForm;
 
 class SiteController extends Controller
 {
@@ -147,16 +148,34 @@ class SiteController extends Controller
     }
     public function actionFind()
     {
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        $model = new EmailForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if (isset($_POST['send'])) {
+                if ($model->sendVerificationCode()) {
+                    $model->addError('email', 'success send code');
+
+                } else {
+                    $model->addError('email', 'fail send code');
+                }
+            } else if (isset($_POST['login'])) {
+                $model->login();
+                if ($model->user->getRole() == 0) {
+                    return Yii::$app->response->redirect(['backend/backend/index']);
+                } else
+                    return $this->goBack();
+            }
+
+
         }
 
-        $model->password = '';
         return $this->render('find', [
             'model' => $model,
         ]);
+
     }
+
+
 
 
     public function actionInitPermissions()
@@ -181,6 +200,10 @@ class SiteController extends Controller
         $auth->addChild($admin, $enterbackend);
 
     }
+
+
+
+
 
 
 

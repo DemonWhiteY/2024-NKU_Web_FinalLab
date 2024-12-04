@@ -18,6 +18,7 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+            'cachePath' => '@runtime/cache',  // 缓存存储路径
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -29,8 +30,15 @@ $config = [
         'mailer' => [
             'class' => \yii\symfonymailer\Mailer::class,
             'viewPath' => '@app/mail',
+            'transport' => [
+
+                'dsn' => 'smtp://demonwhitey%40163.com:AS4X4dcCGPN925FE@smtp.163.com:25',
+                'options' => [
+                    // 'encryption' => 'tls',  // 设置加密方式
+                ],
+            ],
             // send all mails to a file by default.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

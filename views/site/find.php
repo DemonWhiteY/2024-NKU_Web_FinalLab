@@ -3,7 +3,7 @@
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
 
-/** @var app\models\LoginForm $model */
+/** @var app\models\EMailForm $model */
 
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
@@ -54,9 +54,22 @@ use yii\helpers\Url
                                 ],
                             ]); ?>
 
-                            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                            <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
 
-                            <?= $form->field($model, 'password')->passwordInput() ?>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <?= $form->field($model, 'code')->textInput() ?>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="row mb-5"></div>
+                                    <div>
+                                        <?= Html::submitButton('发送验证码 <i
+                                            class="icofont-rounded-double-right mr-0"></i></button>', ['class' => 'btn btn-theme', 'name' => 'send']) ?>
+                                    </div>
+                                </div>
+
+                            </div>
                             <div class="col-lg-5">
                                 <?= $form->field($model, 'rememberMe')->checkbox([
                                     'template' => "<div class=\"custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
@@ -74,7 +87,7 @@ use yii\helpers\Url
                             <div class="form-group">
                                 <div>
                                     <?= Html::submitButton('登陆 <i
-                                            class="icofont-rounded-double-right mr-0"></i></button>', ['class' => 'btn btn-theme', 'name' => 'login-button']) ?>
+                                            class="icofont-rounded-double-right mr-0"></i></button>', ['class' => 'btn btn-theme', 'name' => 'login']) ?>
                                 </div>
 
 

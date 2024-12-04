@@ -76,7 +76,10 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getRole()
     {
-        return $this->role; // 返回用户的 auth_key
+        if ($this->role)
+            return $this->role; // 返回用户的 auth_key
+        else
+            return 1;
     }
 
     /**
@@ -130,6 +133,16 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findByUsername($UserName)
     {
         $user = static::findOne(['username' => $UserName]);
+        if ($user)
+            return $user; // 从数据库查询用户
+        else
+            return null;
+    }
+
+
+    public static function findByEmail($Email)
+    {
+        $user = static::findOne(['email' => $Email]);
         if ($user)
             return $user; // 从数据库查询用户
         else
