@@ -38,6 +38,7 @@ class RegisterForm extends Model
             ['username', 'validateUsername'],
             ['password', 'validatePassword'],
             ['confirmPassword', 'Verification'],
+            ['VerificationCode', 'validateCode']
         ];
     }
 
@@ -86,6 +87,16 @@ class RegisterForm extends Model
         }
     }
 
+    public function validateCode($attribute, $params)
+    {
+        $cachedCode = Yii::$app->cache->get($this->email . '_verification_code');
+        if (empty($attribute)) {
+            $this->addError($attribute, 'enter the code.');
+        } else if ($cachedCode && trim($cachedCode) != trim($this->code)) {
+            $this->addError($attribute, 'worng code');
+        }
+    }
+
     public function Verification($attribute, $params)
     {
         if ($this->password != $this->confirmPassword) {
@@ -104,6 +115,7 @@ class RegisterForm extends Model
             $user->username = $this->username;
             $user->setPassword($this->password);
             $user->email = $this->email;
+            $user->role = 1;
             $user->save();
             if (!$user->save()) {
                 $user->refresh();

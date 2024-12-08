@@ -135,10 +135,26 @@ class SiteController extends Controller
     public function actionRegister()
     {
         $model = new RegisterForm();
-        if ($model->load(Yii::$app->request->post()) && $model->Register()) {
-            return $this->goBack();
-        }
+        $email = new EmailForm();
+        if ($model->load(Yii::$app->request->post())) {
+            $email->email = $model->email;
+            $email->code = $model->VerificationCode;
+            if (isset($_POST['send'])) {
 
+                if ($email->sendVerificationCode()) {
+                    $email->addError('email', 'success send code');
+
+                } else {
+                    $email->addError('email', 'fail send code');
+                }
+            } else if (isset($_POST['register'])) {
+                $model->Register();
+                if ($model->user->getRole() == 0) {
+                    return Yii::$app->response->redirect(['backend/backend/index']);
+                } else
+                    return $this->goBack();
+            }
+        }
         $model->password = '';
         return $this->render('register', [
             'model' => $model,
