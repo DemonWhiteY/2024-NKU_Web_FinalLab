@@ -92,7 +92,7 @@ class RegisterForm extends Model
         $cachedCode = Yii::$app->cache->get($this->email . '_verification_code');
         if (empty($attribute)) {
             $this->addError($attribute, 'enter the code.');
-        } else if ($cachedCode && trim($cachedCode) != trim($this->code)) {
+        } else if ($cachedCode && trim($cachedCode) != trim($this->VerificationCode)) {
             $this->addError($attribute, 'worng code');
         }
     }
