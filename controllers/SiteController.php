@@ -83,7 +83,8 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             if ($model->user->getRole() == 0) {
                 return Yii::$app->response->redirect(['backend/backend/index']);
-            }
+            } else
+                return $this->goBack();
         }
 
         $model->password = '';
