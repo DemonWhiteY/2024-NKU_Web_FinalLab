@@ -76,10 +76,9 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getRole()
     {
-        if ($this->role)
-            return $this->role; // 返回用户的 auth_key
-        else
-            return 1;
+
+        return $this->role; // 返回用户的 auth_key
+
     }
 
     /**

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Dashboard</h4>
+                    <h4 class="mb-sm-0">团队主页后台</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
@@ -27,9 +27,9 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">Total Sales</p>
-                                <h4 class="mb-2">1452</h4>
-                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p>
+                                <p class="text-truncate font-size-14 mb-2">当前在线用户数量</p>
+                                <h4 class="mb-2">0</h4>
+                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p> 
                             </div>
                             <div class="avatar-sm">
                                 <span class="avatar-title bg-light text-primary rounded-3">
@@ -40,12 +40,13 @@
                     </div><!-- end cardbody -->
                 </div><!-- end card -->
             </div><!-- end col -->
+            
             <div class="col-xl-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">New Orders</p>
+                                <p class="text-truncate font-size-14 mb-2">网站总访问量</p>
                                 <h4 class="mb-2">938</h4>
                                 <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p>
                             </div>
@@ -63,7 +64,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">New Users</p>
+                                <p class="text-truncate font-size-14 mb-2">今日访问量</p>
                                 <h4 class="mb-2">8246</h4>
                                 <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>from previous period</p>
                             </div>
@@ -81,7 +82,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">Unique Visitors</p>
+                                <p class="text-truncate font-size-14 mb-2">当日最大访问量</p>
                                 <h4 class="mb-2">29670</h4>
                                 <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>11.7%</span>from previous period</p>
                             </div>
@@ -417,4 +418,17 @@
 </footer>
 
 </div>
+
+
+<div class="parallax"></div>
+
+<style>
+body {
+    background: linear-gradient(135deg, #6e7e8e, #3c4f65); /* 渐变色背景 */
+    background-attachment: fixed; /* 背景固定 */
+    background-size: cover; /* 背景图像铺满 */
+}
+</style>
+
+
 <!-- end main content-->
