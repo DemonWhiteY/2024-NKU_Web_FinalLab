@@ -4,7 +4,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=webFinalLab',
     'username' => 'root',
-    'password' => '',
+    'password' => 'hjz20041116',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
