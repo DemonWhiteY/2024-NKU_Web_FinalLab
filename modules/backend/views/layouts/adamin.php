@@ -217,7 +217,7 @@ $this->beginPage();
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= \yii\helpers\Url::to(['backend/user-management']) ?>">
+            <a class="nav-link" href="<?= \yii\helpers\Url::to(['user/index']) ?>">
                 <i class="fa fa-users"></i> 用户管理
             </a>
         </li>
