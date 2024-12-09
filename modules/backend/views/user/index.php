@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'title' => 'Delete',
                                     'class' => 'btn btn-danger btn-sm',
                                     'data-toggle' => 'tooltip',
-                                    'data-method' => 'get',  // 确保使用 POST 方法
+                                    'data-method' => 'post',  // 确保使用 post 方法
                                     'style' => 'margin-right: 5px;',  // 按钮之间的间距
                                 ]);
                             } else {

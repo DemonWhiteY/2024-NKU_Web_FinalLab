@@ -18,6 +18,7 @@ use yii\web\IdentityInterface;
  * @property int $status
  * @property int $created_at
  * @property int $updated_at
+ * @property int $role
  */
 class User extends ActiveRecord implements IdentityInterface
 {

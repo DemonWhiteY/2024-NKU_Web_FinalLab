@@ -57,22 +57,7 @@ $this->params['breadcrumbs'][] = 'Update';
                 ])->label('Role') ?>
             </div>
 
-            <!-- Additional fields -->
-            <div class="form-group">
-                <?= $form->field($model, 'created_at')->textInput([
-                    'value' => date('Y-m-d H:i:s', $model->created_at),  // 格式化时间
-                    'class' => 'form-control',
-                    'readonly' => true,
-                ])->label('Created At') ?>
-            </div>
-
-            <div class="form-group">
-                <?= $form->field($model, 'updated_at')->textInput([
-                    'value' => date('Y-m-d H:i:s', $model->updated_at),  // 格式化时间
-                    'class' => 'form-control',
-                    'readonly' => true,
-                ])->label('Updated At') ?>
-            </div>
+            
 
             <!-- Submit Button -->
             <div class="form-group text-center">
