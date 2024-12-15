@@ -25,7 +25,16 @@ class AppAsset extends AssetBundle
         'css\icofont.css',
         'css\style.css',
         'css\swiper.min.css',
-        'css\site.css'
+        'css\site.css',
+        'css\bootstrap-icons.min.css',
+        'css\bcolor-saladGreen.css',
+        'css\color-switcher.css',
+        'css\memberstyle.css',
+        'css\owl.carousel.min',
+        'css\owl.theme.default.min.css',
+        'css\responsive.css',
+        'css\custom.css',
+        'css\all.min.css'
     ];
     public $js = [
         'js\bootstrap.min.js',
@@ -37,6 +46,14 @@ class AppAsset extends AssetBundle
         'js\modernizr.js',
         'js\popper.min.js',
         'js\swiper.min.js',
+        'js\ajax-form.js',
+        'js\bootstrap.bundle.min.js',
+        'js\isotope.pkgd.min.js',
+        'js\jquery.min.js',
+        'js\owl.carousel.min.js',
+        'js\script.js',
+        'js\switcher.min.js',
+        'js\typed.mim.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

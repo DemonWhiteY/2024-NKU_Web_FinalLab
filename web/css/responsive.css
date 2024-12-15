@@ -1,0 +1,314 @@
+/* 
+==================================================
+- Template Name: Gstar
+- Author: MountainTheme 
+- Description: Gstar - Personal Portfolio HTML Template
+- File Description: Responsive css file of the template
+- Version: 1.0.0
+==================================================
+*/
+
+/* Extra extra large */
+@media screen and (max-width:1400px) {}
+
+/* Extra large */
+@media screen and (max-width:1200px) {}
+
+@media only screen and (min-width: 1199px) and (max-width: 1400px) {
+    .call-to-action-area-part:is(.pr-192) {
+        padding-right: 148px;
+    }
+
+    .call-to-action-area-part:is(.pr-76) {
+        padding-right: 50px;
+    }
+
+    .call-to-action-area-part:is(.pl-192) {
+        padding-left: 148px;
+    }
+
+    .call-to-action-area-part:is(.pl-76) {
+        padding-left: 50px;
+    }
+
+    .call-to-action-area-part:is(.pt-44) {
+        padding-top: 40px;
+    }
+
+    .call-to-action-area-part:is(.pb-44) {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    /* [ Personal Info / Sidebar ] */
+    /*================================================== */
+    .gstar-personal-info {
+        margin-bottom: 24px;
+    }
+
+    .call-to-action-area-part:is(.pr-192),
+    .call-to-action-area-part:is(.pr-76) {
+        padding-right: 118px;
+    }
+
+    .call-to-action-area-part:is(.pl-192),
+    .call-to-action-area-part:is(.pl-76) {
+        padding-left: 118px;
+    }
+
+    .call-to-action-area-part h2:is(.text-6xl) {
+        font-size: 34px;
+    }
+}
+
+/* Large */
+@media screen and (max-width:992px) {
+
+    /*** Page Title ***/
+    .page-title h3::after {
+        width: 74%;
+    }
+
+    /* [ Header ] */
+    /*================================================== */
+    .primary-menu .menu-container {
+        padding: 16px 20px;
+    }
+
+    .primary-menu #navbarNav {
+        position: absolute;
+        top: 114%;
+        left: 0;
+        right: 0;
+        background: var(--section-bg);
+        margin-top: 0;
+        border-radius: 6px;
+        -webkit-box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.08);
+        z-index: 11;
+    }
+
+    .primary-menu .navbar-nav {
+        padding: 20px;
+    }
+
+    .primary-menu .navbar-nav .nav-link {
+        padding: 8px 0;
+    }
+
+    /* [ Personal Info / Sidebar ] */
+    /*================================================== */
+    .gstar-personal-info {
+        padding: 36px 32px;
+        margin-bottom: 24px;
+    }
+
+    /* [ Pages ] */
+    /*================================================== */
+    .section-inner-wrapper:is(.pt-32) {
+        padding-top: 36px;
+    }
+
+    /* [ Services ] */
+    /*================================================== */
+    /*** Offer ***/
+    .services .service-box,
+    .gstar-pricing-plan .pricing-plan-box {
+        padding: 24px;
+    }
+
+    /*** Pricing Plan ***/
+    html[dir=rtl] .pricing-plan-box .bage {
+        right: auto;
+        left: 24px;
+    }
+
+    .pricing-plan-box .bage {
+        top: 24px;
+        right: 24px;
+    }
+
+    /* [ Call to Action ] */
+    /*================================================== */
+    .call-to-action-area-part:is(.pr-76),
+    .call-to-action-area-part:is(.pr-192) {
+        padding-right: 40px;
+    }
+
+    .call-to-action-area-part:is(.pl-76),
+    .call-to-action-area-part:is(.pl-192) {
+        padding-left: 40px;
+    }
+
+    .call-to-action-area-part:is(.pt-56),
+    .call-to-action-area-part:is(.pt-44) {
+        padding-top: 36px;
+    }
+
+    .call-to-action-area-part:is(.pb-56),
+    .call-to-action-area-part:is(.pb-44) {
+        padding-bottom: 36px;
+    }
+
+    .call-to-action-area-part h2:is(.text-6xl) {
+        font-size: 32px;
+    }
+
+    /* [ Work Single ] */
+    /*================================================== */
+    .gstar-project-details:is(.pt-80),
+    .gstar-blog-details:is(.pt-80) {
+        padding-top: 60px;
+    }
+
+    /* [ Blog Single ] */
+    /*================================================== */
+    .gstar-blog-details .comments-area:is(.mb-40) {
+        margin-bottom: 32px;
+    }
+
+    .gstar-blog-details h1:is(.text-4xl) {
+        font-size: 28px;
+    }
+
+    .gstar-blog-details .comments-area .comment-box {
+        padding: 32px !important;
+    }
+}
+
+/* Medium */
+@media screen and (max-width:767px) {
+
+    /* [ Header ] */
+    /*================================================== */
+    .header:is(.mb-48) {
+        margin-bottom: 38px;
+    }
+
+    /* [ Personal Info / Sidebar ] */
+    /*================================================== */
+    .gstar-personal-info {
+        padding: 32px 18px;
+    }
+
+    /* [ Pages ] */
+    /*================================================== */
+    .section-inner-wrapper:is(.pt-32) {
+        padding-top: 32px;
+    }
+
+    .section-inner-wrapper:is(.pl-32) {
+        padding-right: 18px;
+    }
+
+    .section-inner-wrapper:is(.pr-32) {
+        padding-left: 18px;
+    }
+
+    /* [ Call to Action ] */
+    /*================================================== */
+    .call-to-action-area-part:is(.pr-76),
+    .call-to-action-area-part:is(.pr-76) {
+        padding-right: 28px;
+    }
+
+    .call-to-action-area-part:is(.pl-76),
+    .call-to-action-area-part:is(.pl-192) {
+        padding-left: 28px;
+    }
+
+    .call-to-action-area-part:is(.pt-56),
+    .call-to-action-area-part:is(.pt-44) {
+        padding-top: 28px;
+    }
+
+    .call-to-action-area-part:is(.pb-56),
+    .call-to-action-area-part:is(.pb-44) {
+        padding-bottom: 28px;
+    }
+
+    .call-to-action-area-part h2:is(.text-6xl),
+    .call-to-action-area-part h2:is(.text-3xl) {
+        font-size: 24px;
+    }
+
+    .call-to-action-area-part h2:is(.text-6xl),
+    .call-to-action-area-part h2:is(.mb-20) {
+        margin-bottom: 16px;
+    }
+
+    .call-to-action-area-part p {
+        margin-bottom: 20px !important;
+    }
+
+    /* [ Work Single ] */
+    /*================================================== */
+    .gstar-project-details:is(.pt-80),
+    .gstar-blog-details:is(.pt-80) {
+        padding-top: 48px;
+    }
+
+    .gstar-project-details .project-heading:is(.text-7xl) {
+        font-size: 32px;
+        margin-bottom: 40px !important;
+    }
+
+
+    /* [ Blog Single ] */
+    /*================================================== */
+    .gstar-blog-details .comments-area:is(.mb-40) {
+        margin-bottom: 24px;
+    }
+
+    .gstar-blog-details .comments-area .comment-box {
+        padding: 24px !important;
+    }
+
+    .comments-area .comment-box.reply-comment {
+        margin-left: 32px !important;
+    }
+
+    /* [ Contact ] */
+    /*================================================== */
+    .gstar-contact-form {
+        padding: 24px;
+    }
+
+}
+
+/* Small */
+@media screen and (max-width:576px) {
+
+    /* [ About ] */
+    /*================================================== */
+    .about-head:is(.text-7xl) {
+        font-size: 36px;
+    }
+
+    /*** Clients ***/
+    .clients h4.text-xl {
+        padding-bottom: 42px;
+    }
+
+    .clients .owl-nav {
+        right: unset;
+    }
+}
+
+/* Extra small */
+@media screen and (max-width:360px) {
+
+    /* [ About ] */
+    /*================================================== */
+    .about-head:is(.text-7xl) {
+        font-size: 32px;
+    }
+
+    /* [ Call to Action ] */
+    /*================================================== */
+    .call-to-action-area-part h2:is(.text-3xl) {
+        font-size: 22px;
+    }
+}

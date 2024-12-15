@@ -5,6 +5,8 @@
 $this->title = 'My Yii Application';
 ?>
 
+<div height="300px"></div>
+
 
 <main class="main-content">
     <!--== Start Hero Area Wrapper ==-->
@@ -15,22 +17,22 @@ $this->title = 'My Yii Application';
                     <div class="swiper-slide">
                         <!-- Start Slide Item -->
                         <div class="home-slider-item">
-                            <div class="slider-content-area bg-img" data-bg-img="assets/img/slider/1.webp">
+                            <div class="slider-content-area bg-img"
+                                style="background-image: url('static/picture/xuemo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6 col-lg-5 col-xl-6">
                                             <div class="content">
                                                 <div class="inner-content">
                                                     <div class="wrap-one">
-                                                        <h2>Fast & trusted transportation service.</h2>
+                                                        <h2>欢迎来到我们的团队主页</h2>
                                                     </div>
                                                     <div class="wrap-two">
-                                                        <p>It is long established fact that reader will be
-                                                            distracted readable content of page when looking.</p>
+                                                        <p>Welcome to our team homepage.</p>
                                                     </div>
-                                                    <div class="wrap-three">
+                                                    <!-- <div class="wrap-three">
                                                         <a href="contact.html" class="btn-theme">Booking Now</a>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -96,37 +98,36 @@ $this->title = 'My Yii Application';
                     <div class="about-content">
                         <div class="section-title">
                             <h4 class="subtitle">ABOUT US</h4>
-                            <h2 class="title">Strist is world famous logistic partner over 38 years of experience.
+                            <h2 class="title">南开大学2024秋互联网数据库开发小组
                             </h2>
-                            <p>It long established fact a reader will be distracted the readable content of a pages
-                                when looking layout point using is that has more less normal distribution making it
-                                look like readable.</p>
-                            <p>It long established fact a reader will be distracted the readable content of a pages
-                                when looking layout point using is that has more less normal distribution making it
-                                look like readable.</p>
-                            <a href="about.html" class="btn-theme">Team Members</a>
+                            <p>张明昆：计算机学院2022级本科生--2211585 </p>
+                            <p>闫恒瑞：计算机学院2022级本科生--2212043</p>
+                            <p>胡进喆：计算机学院2022级本科生--2213045</p>
+                            <p>王博：计算机学院2022级本科生--2211642</p>
+
+                            <a href="Main/about.html" class="btn-theme">Team Members</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="about-thumb">
-                        <img src="static/picture/a1.webp" alt="Image" width="350" height="570">
+                        <img src="static/picture/mountain.jpg" alt="Image" width="350" height="570">
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <div class="featured-wrp">
                         <div class="featured-item">
-                            <h4 class="title"><a href="about.html">Highly Professional Staff</a></h4>
+                            <h4 class="title"><a href="about.html">专业能力</a></h4>
                             <p>It long estabhed fact that reader readab content page when looking point using that
                                 less</p>
                         </div>
                         <div class="featured-item">
-                            <h4 class="title"><a href="about.html">Great Transportation</a></h4>
+                            <h4 class="title"><a href="about.html">参赛经历</a></h4>
                             <p>It long estabhed fact that reader readab content page when looking point using that
                                 less</p>
                         </div>
                         <div class="featured-item">
-                            <h4 class="title"><a href="about.html">Warehousing Storage</a></h4>
+                            <h4 class="title"><a href="about.html">爱好广泛</a></h4>
                             <p>It long estabhed fact that reader readab content page when looking point using that
                                 less</p>
                         </div>
@@ -143,8 +144,8 @@ $this->title = 'My Yii Application';
             <div class="row">
                 <div class="col-lg-12 m-auto">
                     <div class="section-title text-center">
-                        <h4 class="subtitle">AWESOME SERVICES</h4>
-                        <h2 class="title">Logistic Services</h2>
+                        <h4 class="subtitle">ABOUT US</h4>
+                        <h2 class="title">个人风采</h2>
                     </div>
                 </div>
             </div>
@@ -156,11 +157,11 @@ $this->title = 'My Yii Application';
                                 <!-- Start Service Item -->
                                 <div class="service-item">
                                     <div class="thumb">
-                                        <a href="service-details.html"><img src="static/picture/1.webp" alt="Image"
-                                                width="270" height="308"></a>
+                                        <a href="service-details.html"><img src="static/picture/guduyaogun.jpg"
+                                                alt="Image" width="270" height="308"></a>
                                     </div>
                                     <div class="content">
-                                        <h4 class="title"><a href="service-details.html">Commercial Movers</a></h4>
+                                        <h4 class="title"><a href="service-details.html">二刺螈</a></h4>
                                     </div>
                                 </div>
                                 <!-- End Service Item -->
@@ -169,11 +170,11 @@ $this->title = 'My Yii Application';
                                 <!-- Start Service Item -->
                                 <div class="service-item">
                                     <div class="thumb">
-                                        <a href="service-details.html"><img src="static/picture/2.webp" alt="Image"
+                                        <a href="service-details.html"><img src="static/picture/huaxue.jpg" alt="Image"
                                                 width="270" height="308"></a>
                                     </div>
                                     <div class="content">
-                                        <h4 class="title"><a href="service-details.html">Air Transportation</a></h4>
+                                        <h4 class="title"><a href="service-details.html">运动</a></h4>
                                     </div>
                                 </div>
                                 <!-- End Service Item -->
@@ -182,11 +183,11 @@ $this->title = 'My Yii Application';
                                 <!-- Start Service Item -->
                                 <div class="service-item">
                                     <div class="thumb">
-                                        <a href="service-details.html"><img src="static/picture/3.webp" alt="Image"
+                                        <a href="service-details.html"><img src="static/picture/code.png" alt="Image"
                                                 width="270" height="308"></a>
                                     </div>
                                     <div class="content">
-                                        <h4 class="title"><a href="service-details.html">Warehousing</a></h4>
+                                        <h4 class="title"><a href="service-details.html">码！</a></h4>
                                     </div>
                                 </div>
                                 <!-- End Service Item -->
@@ -195,11 +196,11 @@ $this->title = 'My Yii Application';
                                 <!-- Start Service Item -->
                                 <div class="service-item">
                                     <div class="thumb">
-                                        <a href="service-details.html"><img src="static/picture/4.webp" alt="Image"
+                                        <a href="service-details.html"><img src="static/picture/travel.jpg" alt="Image"
                                                 width="270" height="308"></a>
                                     </div>
                                     <div class="content">
-                                        <h4 class="title"><a href="service-details.html">Consulting Storage</a></h4>
+                                        <h4 class="title"><a href="service-details.html">旅行&摄影</a></h4>
                                     </div>
                                 </div>
                                 <!-- End Service Item -->
@@ -212,8 +213,8 @@ $this->title = 'My Yii Application';
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <p class="get-started">We are ready to give 24/7 support for your cutomer. <a
-                            href="services.html">Get Started</a></p>
+                    <!-- <p class="get-started">We are ready to give 24/7 support for your cutomer. <a
+                            href="services.html">Get Started</a></p> -->
                 </div>
             </div>
             <div class="shape-group">
@@ -229,7 +230,7 @@ $this->title = 'My Yii Application';
     <!--== End Service Area Wrapper ==-->
 
     <!--== Start Divider Area Wrapper ==-->
-    <section class="divider-area divider-style1-area">
+    <!-- <section class="divider-area divider-style1-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -248,7 +249,7 @@ $this->title = 'My Yii Application';
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--== End Divider Area Wrapper ==-->
 
     <!--== Start Team Area ==-->
@@ -258,7 +259,7 @@ $this->title = 'My Yii Application';
                 <div class="col-lg-12 m-auto">
                     <div class="section-title text-center">
                         <h4 class="subtitle">TEAM MEMBERS</h4>
-                        <h2 class="title">Highly Experienced Team</h2>
+                        <h2 class="title">喵喵大魔王组</h2>
                     </div>
                 </div>
             </div>
@@ -270,12 +271,12 @@ $this->title = 'My Yii Application';
                                 <div class="swiper-slide">
                                     <div class="team-member">
                                         <div class="thumb">
-                                            <img src="static/picture/18.webp" alt="Image" width="161" height="199">
+                                            <img src="static/picture/zmk.jpg" alt="Image" width="161" height="199">
                                         </div>
                                         <div class="content">
                                             <div class="member-info">
-                                                <h4 class="name">Keshia Mchugh</h4>
-                                                <h6 class="designation">Delivery Manager</h6>
+                                                <h4 class="name">张明昆</h4>
+                                                <h6 class="designation">组长</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -283,12 +284,12 @@ $this->title = 'My Yii Application';
                                 <div class="swiper-slide">
                                     <div class="team-member">
                                         <div class="thumb">
-                                            <img src="static/picture/22.webp" alt="Image" width="161" height="199">
+                                            <img src="static/picture/yhr.jpg" alt="Image" width="161" height="199">
                                         </div>
                                         <div class="content">
                                             <div class="member-info">
-                                                <h4 class="name">Robin Justice</h4>
-                                                <h6 class="designation">Cargo Supervisor</h6>
+                                                <h4 class="name">闫恒瑞</h4>
+                                                <h6 class="designation">成员</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -296,12 +297,12 @@ $this->title = 'My Yii Application';
                                 <div class="swiper-slide">
                                     <div class="team-member">
                                         <div class="thumb">
-                                            <img src="static/picture/32.webp" alt="Image" width="161" height="199">
+                                            <img src="static/picture/hjz.jpg" alt="Image" width="161" height="199">
                                         </div>
                                         <div class="content">
                                             <div class="member-info">
-                                                <h4 class="name">Kandis Justice</h4>
-                                                <h6 class="designation">Cargo Supervisor</h6>
+                                                <h4 class="name">胡进喆</h4>
+                                                <h6 class="designation">成员</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -309,12 +310,12 @@ $this->title = 'My Yii Application';
                                 <div class="swiper-slide">
                                     <div class="team-member">
                                         <div class="thumb">
-                                            <img src="static/picture/41.webp" alt="Image" width="161" height="199">
+                                            <img src="static/picture/wb.jpg" alt="Image" width="161" height="199">
                                         </div>
                                         <div class="content">
                                             <div class="member-info">
-                                                <h4 class="name">Sacha Preston</h4>
-                                                <h6 class="designation">Delivery Manager</h6>
+                                                <h4 class="name">王博</h4>
+                                                <h6 class="designation">成员</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -329,91 +330,62 @@ $this->title = 'My Yii Application';
     <!--== End Team Area ==-->
 
     <!--== Start Project Area ==-->
-    <section class="project-area project-default-area">
-        <div class="container-fluid">
+
+    <!--== End Project Area ==-->
+
+    <!--== Start Blog Area Wrapper ==-->
+    <section class="blog-area blog-default-area position-relative">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 m-auto">
-                    <div class="section-title text-center">
-                        <h4 class="subtitle">COMPLETE PROJECTS</h4>
-                        <h2 class="title">Work For Customer</h2>
+                    <div class="section-title">
+                        <h4 class="subtitle">OUR LATEST BLOG POST</h4>
+                        <h2 class="title">最新博客</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
-                    <div class="projects-slider-content">
-                        <div class="swiper-container projects-slider-container">
-                            <div class="swiper-wrapper projects-slider-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="project-item">
-                                        <div class="thumb">
-                                            <a href="project-details.html"><img src="static/picture/w1.webp" alt="Image"
-                                                    width="564" height="347"></a>
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title"><a href="project-details.html">Security System
-                                                    Cargo</a></h4>
-                                            <h6 class="category"><a href="projects.html">Transportation Project</a>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="project-item">
-                                        <div class="thumb">
-                                            <a href="project-details.html"><img src="static/picture/w2.webp" alt="Image"
-                                                    width="564" height="347"></a>
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title"><a href="project-details.html">Drone Ride Service</a>
-                                            </h4>
-                                            <h6 class="category"><a href="projects.html">Transportation Project</a>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="project-item">
-                                        <div class="thumb">
-                                            <a href="project-details.html"><img src="static/picture/w3.webp" alt="Image"
-                                                    width="564" height="347"></a>
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title"><a href="project-details.html">Security System
-                                                    Cargo</a></h4>
-                                            <h6 class="category"><a href="projects.html">Transportation Project</a>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="project-item">
-                                        <div class="thumb">
-                                            <a href="project-details.html"><img src="static/picture/w4.webp" alt="Image"
-                                                    width="564" height="347"></a>
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title"><a href="project-details.html">Drone Ride Service</a>
-                                            </h4>
-                                            <h6 class="category"><a href="projects.html">Transportation Project</a>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add Arrows -->
-                            <div class="swiper-btn-next"><i class="icofont-long-arrow-right"></i></div>
-                            <div class="swiper-btn-prev"><i class="icofont-long-arrow-left"></i></div>
-                            <!-- Add Pagination -->
-                            <div class="swiper-pagination"></div>
+                <div class="col-md-6">
+                    <!--== Start Blog Post Item ==-->
+                    <div class="post-item mb-sm-50">
+                        <div class="thumb">
+                            <img src="static/picture/doufunao.jpg" alt="Image" width="420" height="370">
+                        </div>
+                        <div class="content">
+                            <a href="blog.html" class="meta-tag"><span class="post-date"></span>10 Dec. 2024</a>
+                            <h3 class="title"><a href="blog-details.html">豆腐脑甜的好吃还是咸的好吃</a></h3>
+                            <p>我觉得北方人爱吃咸的，南方人爱吃甜的</p>
+                            <a class="btn-link" href="blog-details.html">Read More</a>
                         </div>
                     </div>
+                    <!--== End Blog Post Item ==-->
+                </div>
+                <div class="col-md-6">
+                    <!--== Start Blog Post Item ==-->
+                    <div class="post-item">
+                        <div class="thumb">
+                            <img src="static/picture/leiden.png" alt="Image" width="420" height="370">
+                        </div>
+                        <div class="content">
+                            <a href="blog.html" class="meta-tag"><span class="post-date"></span>2 Dec. 2024</a>
+                            <h3 class="title"><a href="blog-details.html">图社区发现算法--Leiden算法</a></h3>
+                            <p>Leiden算法出自2019年的论文《From Louvain to Leiden: guaranteeing well-connected
+                                communities》，它是Louvain算法的改进社区发现算法，相比Louvain得到的社区质量更高，因为其移动策略速度也更快。Leiden算法也是以论文作者所在城市来命名的。
+                            </p>
+                            <a class="btn-link" href="blog-details.html">Read More</a>
+                        </div>
+                    </div>
+                    <!--== End Blog Post Item ==-->
                 </div>
             </div>
         </div>
-        <div class="bg-shape-style" data-bg-img="assets/img/shape/5.webp"></div>
+        <div class="shape-group">
+            <div class="shape-style1">
+                <img src="static/picture/110.webp" alt="Image" width="185" height="185">
+            </div>
+        </div>
     </section>
-    <!--== End Project Area ==-->
+    <!--== End Blog Area Wrapper ==-->
 
     <!--== Start Testimonial Area Wrapper ==-->
     <section class="testimonial-area testimonial-default-area">
@@ -421,8 +393,8 @@ $this->title = 'My Yii Application';
             <div class="row">
                 <div class="col-lg-12 m-auto">
                     <div class="section-title text-center">
-                        <h4 class="subtitle">HAPPY CLIENTS</h4>
-                        <h2 class="title">Feedback From Clients</h2>
+                        <h4 class="subtitle">MESSAGE BOARD</h4>
+                        <h2 class="title">个人留言板</h2>
                     </div>
                 </div>
             </div>
@@ -434,24 +406,16 @@ $this->title = 'My Yii Application';
                                 <!--== Start Testimonial Item ==-->
                                 <div class="testimonial-item">
                                     <div class="content">
-                                        <p>“Lorem Ipsum simply dummy text printing typesetting industry lorem has
-                                            been industry standard dummy text sinces when unknowns printer took
-                                            galley type and scram make type specimen book”.</p>
+                                        <p>“这是一条留言”.</p>
                                         <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon"
                                             width="252" height="191">
                                     </div>
                                     <div class="client-info">
                                         <div class="desc">
-                                            <h5>Founder of Musion</h5>
-                                            <h4>Shoshana Horsley</h4>
+                                            <h5>2024.12.10</h5>
+                                            <h4>张明昆</h4>
                                         </div>
-                                        <div class="rating">
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="icofont-star"></span>
-                                            <span class="icofont-star"></span>
-                                        </div>
+
                                     </div>
                                 </div>
                                 <!--== End Testimonial Item ==-->
@@ -545,83 +509,8 @@ $this->title = 'My Yii Application';
     <!--== End Testimonial Area Wrapper ==-->
 
     <!--== Start Divider Area Wrapper ==-->
-    <section class="divider-area divider-default-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-8 col-md-7">
-                    <div class="content">
-                        <h2 class="title">Stay connect with for<br> daily logistic service update.</h2>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-5">
-                    <div class="divider-btn">
-                        <a class="btn-theme btn-white" href="">Subscribe Now <i
-                                class="icofont-rounded-double-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="shape-group">
-            <div class="shape-style4">
-                <img src="static/picture/42.webp" alt="Image" width="560" height="250">
-            </div>
-        </div>
-    </section>
+
     <!--== End Divider Area Wrapper ==-->
 
-    <!--== Start Blog Area Wrapper ==-->
-    <section class="blog-area blog-default-area position-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 m-auto">
-                    <div class="section-title">
-                        <h4 class="subtitle">OUR LATEST BLOG POST</h4>
-                        <h2 class="title">Latest News & Article</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <!--== Start Blog Post Item ==-->
-                    <div class="post-item mb-sm-50">
-                        <div class="thumb">
-                            <img src="static/picture/19.webp" alt="Image" width="420" height="370">
-                        </div>
-                        <div class="content">
-                            <a href="blog.html" class="meta-tag"><span class="post-date"></span>31 June 2022</a>
-                            <h3 class="title"><a href="blog-details.html">Make type specimen book has survived not
-                                    only five centurie’s the into electronic.</a></h3>
-                            <p>It long established fact that a will be distracted looking at using is that has
-                                distribution</p>
-                            <a class="btn-link" href="blog-details.html">Read More</a>
-                        </div>
-                    </div>
-                    <!--== End Blog Post Item ==-->
-                </div>
-                <div class="col-md-6">
-                    <!--== Start Blog Post Item ==-->
-                    <div class="post-item">
-                        <div class="thumb">
-                            <img src="static/picture/23.webp" alt="Image" width="420" height="370">
-                        </div>
-                        <div class="content">
-                            <a href="blog.html" class="meta-tag"><span class="post-date"></span>31 June 2022</a>
-                            <h3 class="title"><a href="blog-details.html">Fast & trusted transportation service.
-                                    five centurie’s the into technology.</a></h3>
-                            <p>Stay connect with for daily logistic service update from our logistic action source
-                            </p>
-                            <a class="btn-link" href="blog-details.html">Read More</a>
-                        </div>
-                    </div>
-                    <!--== End Blog Post Item ==-->
-                </div>
-            </div>
-        </div>
-        <div class="shape-group">
-            <div class="shape-style1">
-                <img src="static/picture/110.webp" alt="Image" width="185" height="185">
-            </div>
-        </div>
-    </section>
-    <!--== End Blog Area Wrapper ==-->
+
 </main>

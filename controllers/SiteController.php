@@ -11,6 +11,10 @@ use app\models\LoginForm;
 use app\models\RegisterForm;
 use app\models\ContactForm;
 use app\models\EmailForm;
+use app\models\Post;
+use app\models\Test;
+use app\models\PostLike;  // 添加这行
+use app\models\Employees;
 
 class SiteController extends Controller
 {
@@ -149,11 +153,16 @@ class SiteController extends Controller
                     $email->addError('email', 'fail send code');
                 }
             } else if (isset($_POST['register'])) {
-                $model->Register();
-                if ($model->user->getRole() == 0) {
-                    return Yii::$app->response->redirect(['backend/backend/index']);
-                } else
-                    return $this->goBack();
+                if ($model->Register()) {
+
+                    if ($model->user->getRole() == 0) {
+                        return Yii::$app->response->redirect(['backend/backend/index']);
+                    } else
+                        return $this->goBack();
+                }
+
+
+
             }
         }
         $model->password = '';
@@ -217,11 +226,80 @@ class SiteController extends Controller
 
     }
 
+    public function actionCreatepost()
+    {
+        // 创建新的模型实例
+        $model = new Post();
 
+        // 检查是否是 POST 提交
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', '添加成功！');
+            return $this->redirect(['index']);
+        }
 
+        // 渲染视图并传递模型
+        return $this->render('createpost', [
+            'model' => $model  // 这里传递模型到视图
+        ]);
+    }
 
+    public function actionViewpost()
+    {
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => \app\models\Post::find()->orderBy(['create_at' => SORT_DESC]),
+            'pagination' => [
+                'pageSize' => 10, // 每页显示10条
+            ],
+        ]);
 
+        return $this->render('viewpost', [
+            'dataProvider' => $dataProvider  // 传递 dataProvider 到视图
+        ]);
+    }
 
+    public function actionCreate()
+    {
+        // 创建新的模型实例
+        $model = new Test();
+
+        // 检查是否是 POST 提交
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', '添加成功！');
+            return $this->redirect(['index']);
+        }
+
+        // 渲染视图并传递模型
+        return $this->render('create', [
+            'model' => $model  // 这里传递模型到视图
+        ]);
+    }
+
+    public function actionView()
+    {
+        return $this->render('view');
+    }
+
+    public function actionDetail($id)
+    {
+        return $this->render('detail', [
+            'id' => $id
+        ]);
+    }
+
+    public function actionTest()
+    {
+        // 测试创建点赞
+        $postLike = new PostLike();
+        $postLike->post_id = 1;
+        $postLike->user_id = 1;
+        var_dump($postLike->save()); // 应该返回 true
+
+        // 测试重复点赞
+        $duplicateLike = new PostLike();
+        $duplicateLike->post_id = 1;
+        $duplicateLike->user_id = 1;
+        var_dump($duplicateLike->save()); // 应该返回 false，因为违反唯一约束
+    }
 
 
 }

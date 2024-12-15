@@ -41,9 +41,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <div class="col-4 col-sm-6 col-lg-2">
                         <div class="header-logo-area">
                             <a href="">
-                                <img class="logo-main" src="static/picture/logo.webp" alt="Logo" width="161"
-                                    height="48">
-                                <img class="logo-light" src="static/picture/logo-light.webp" alt="Logo" width="161"
+                                <img class="logo-main" src="static/picture/nku.webp" alt="Logo" width="161" height="48">
+                                <img class="logo-light" src="static/picture/nkulogo.webp" alt="Logo" width="280"
                                     height="48">
                             </a>
                         </div>
@@ -52,33 +51,42 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         <div class="header-navigation-area">
                             <ul class="main-menu nav position-relative">
                                 <li><a href="<?= Url::to(['site/index']) ?>">主页</a></li>
-                                <li class="has-submenu"><a href="services.html">产品</a>
+                                <!-- <li class="has-submenu"><a href="services.html">产品</a>
                                     <ul class="submenu-nav">
                                         <li><a href="services.html">产品</a></li>
                                         <li><a href="service-details.html">Service Details</a></li>
                                     </ul>
-                                </li>
-                                <li class="has-submenu"><a href="projects.html">案例</a>
+                                </li> -->
+                                <li class="has-submenu"><a
+                                        href="<?= Url::to(['employees/employee', 'id' => 1]) ?>">成员</a>
                                     <ul class="submenu-nav">
-                                        <li><a href="projects.html">Portfolio</a></li>
-                                        <li><a href="project-details.html">Portfolio Details</a></li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 0]) ?>">张明昆</a>
+                                        </li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 1]) ?>">闫恒瑞</a>
+                                        </li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 2]) ?>">胡进喆</a>
+                                        </li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 3]) ?>">王博</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="">订购</a>
+                                <!-- <li class="has-submenu"><a href="">订购</a>
                                     <ul class="submenu-nav">
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="coming-soon.html">Coming soon</a></li>
                                         <li><a href="page-not-found.html">404</a></li>
                                     </ul>
-                                </li>
-                                <li class="has-submenu"><a href="blog.html">Blog</a>
+                                </li> -->
+                                <li class="has-submenu"><a href="<?= Url::to(['site/viewpost']) ?>">帖子</a>
                                     <ul class="submenu-nav">
-                                        <li><a href="blog.html">Blog 3 Column</a></li>
-                                        <li><a href="blog-4-column.html">Blog 4 Column</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="blog.html">Blog No Sidebar</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                        <li><a href="<?= Url::to(['site/createpost']) ?>">发帖子</a></li>
+                                        <li><a href="<?= Url::to(['site/viewpost']) ?>">帖子广场</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="<?= Url::to(['site/viewpost']) ?>">测试</a>
+                                    <ul class="submenu-nav">
+                                        <li><a href="<?= Url::to(['site/create']) ?>">test1</a></li>
+                                        <li><a href="<?= Url::to(['site/view']) ?>">test2</a></li>
                                     </ul>
                                 </li>
                                 <?php if (!Yii::$app->user->isGuest): ?>
@@ -147,7 +155,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 <div class="row">
                     <div class="col-md-6 col-lg-4 col-xl-3">
                         <div class="widget-item">
-                            <h4 class="widget-title">Latest Post</h4>
+                            <h4 class="widget-title">最新博客</h4>
                             <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#dividerId-1">Latest Post</h4>
                             <div id="dividerId-1" class="collapse widget-collapse-body">
@@ -155,19 +163,17 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <div class="blog-post-item">
                                         <div class="content">
                                             <h4 class="title"><i class="icon icofont-minus"></i> <a
-                                                    href="blog-details.html">With WooLentor's drag and drop
-                                                    interface</a></h4>
+                                                    href="blog-details.html">豆腐脑甜的好吃还是咸的好吃</a></h4>
                                             <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i>
-                                                    28/05/2022</a></div>
+                                                    28/05/2024</a></div>
                                         </div>
                                     </div>
                                     <div class="blog-post-item">
                                         <div class="content">
                                             <h4 class="title"><i class="icon icofont-minus"></i> <a
-                                                    href="blog-details.html">Lorem has been industry standard ever
-                                                    since.</a></h4>
+                                                    href="blog-details.html">图社区发现算法--Leiden算法</a></h4>
                                             <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i>
-                                                    31/05/2022</a></div>
+                                                    31/05/2024</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,22 +182,17 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     </div>
                     <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
                         <div class="widget-item">
-                            <h4 class="widget-title">All Services</h4>
+                            <h4 class="widget-title">团队组成</h4>
                             <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#dividerId-2">All Services</h4>
                             <div id="dividerId-2" class="collapse widget-collapse-body">
                                 <nav class="widget-menu-wrap">
                                     <ul class="nav-menu nav">
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Commercial
-                                                Movers</a></li>
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Air Freight
-                                                Services</a></li>
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Drone
-                                                Services</a></li>
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Road Freight
-                                                Services</a></li>
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>Warehousing
-                                                Services</a></li>
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>组长：张明昆</a></li>
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>成员：闫恒瑞</a></li>
+
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>成员：胡进喆</a></li>
+                                        <li><a href="service-details.html"><i class="icofont-minus"></i>成员：王博</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -199,17 +200,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     </div>
                     <div class="col-md-6 col-lg-3 col-xl-3">
                         <div class="widget-item ml-40 ml-lg-20 md-ml-0">
-                            <h4 class="widget-title">Important</h4>
+                            <h4 class="widget-title">帮助</h4>
                             <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#dividerId-3">Important</h4>
                             <div id="dividerId-3" class="collapse widget-collapse-body">
                                 <nav class="widget-menu-wrap">
                                     <ul class="nav-menu nav">
-                                        <li><a href="about.html"><i class="icofont-minus"></i>About Maskat</a></li>
-                                        <li><a href=""><i class="icofont-minus"></i>Price & Planning</a></li>
-                                        <li><a href="contact.html"><i class="icofont-minus"></i>Client Support</a></li>
-                                        <li><a href=""><i class="icofont-minus"></i>Privacy & Policy</a></li>
-                                        <li><a href="contact.html"><i class="icofont-minus"></i>Contact Us</a></li>
+                                        <li><a href="about.html"><i class="icofont-minus"></i>登录/注册问题</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>博客相关问题</a></li>
+                                        <li><a href="contact.html"><i class="icofont-minus"></i>其他问题</a></li>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -217,17 +217,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     </div>
                     <div class="col-md-6 col-lg-2 col-xl-2">
                         <div class="widget-item ml-35 lg-ml-0">
-                            <h4 class="widget-title">Follow Us</h4>
+                            <h4 class="widget-title">联系我们</h4>
                             <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#dividerId-4">Follow Us</h4>
                             <div id="dividerId-4" class="collapse widget-collapse-body">
                                 <nav class="widget-menu-wrap">
                                     <ul class="nav-menu nav">
-                                        <li><a href=""><i class="icofont-minus"></i>Facebook</a></li>
-                                        <li><a href=""><i class="icofont-minus"></i>Twitter</a></li>
-                                        <li><a href=""><i class="icofont-minus"></i>Instragram</a></li>
-                                        <li><a href=""><i class="icofont-minus"></i>Youtube</a></li>
-                                        <li><a href=""><i class="icofont-minus"></i>Medium</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>Email：2211585@mail.nankai.edu.cn</a>
+                                        </li>
+                                        <li><a href=""><i class="icofont-minus"></i>Wechat：zm131827307</a></li>
+                                        <li><a href=""><i class="icofont-minus"></i>QQ：1597360653</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -243,8 +242,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <div class="row">
                         <div class="col-md-12">
                             <div class="widget-copyright">
-                                <p>Copyright &copy; 2022.Company name All rights reserved.<a target="_blank"
-                                        href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                                <p>Copyright &copy; 2024 OurTeam.</p>
                             </div>
                         </div>
                     </div>
@@ -274,6 +272,22 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
     <!--=== Custom Js ===-->
     <script src="js/custom.js"></script>
+
+    <!-- jQery -->
+    <script src="static/js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="static/js/owl.carousel.min.js"></script>
+    <!-- Typed -->
+    <script src="static/js/typed.min.js"></script>
+    <!-- Ajax Contact Form -->
+    <script src="static/js/ajax-form.js"></script>
+    <!-- Color Switcher -->
+    <script src="static/js/switcher.min.js"></script>
+    <!-- Theme -->
+    <script src="static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>
