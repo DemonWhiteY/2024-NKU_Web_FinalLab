@@ -1,0 +1,132 @@
+/* [ Color Switcher ] */
+/*================================================== */
+html[dir=rtl] .color-switcher {
+    right: auto;
+    left: -208px;
+}
+
+.color-switcher {
+    position: fixed;
+    top: 30%;
+    right: -208px;
+    width: 208px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 0 0 0 5px;
+    z-index: 10;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+html[dir=rtl] .color-switcher.active {
+    right: auto;
+    left: 0;
+}
+
+.color-switcher.active {
+    right: 0;
+}
+
+.color-switcher h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #141824;
+    text-align: center;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CACEDA;
+}
+
+
+html[dir=rtl] .color-switcher .switcher-btn {
+    left: auto;
+    right: -41px;
+    border-radius: 0 5px 5px 0;
+}
+
+.color-switcher .switcher-btn {
+    position: absolute;
+    top: 0;
+    left: -41px;
+    background: #515A74;
+    color: #FFF;
+    padding: 9px 12px;
+    font-size: 17px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+}
+
+.dark-theme .color-switcher .switcher-btn {
+    background: #424242;
+}
+
+.color-switcher .theme-buttons-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+.color-switcher .theme-buttons-container .theme-button {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.color-switcher .theme-buttons-container .theme-button.saladGreen {
+    background: #A3CB38;
+}
+
+.color-switcher .theme-buttons-container .theme-button.orange {
+    background: #FE6F1D;
+}
+
+.color-switcher .theme-buttons-container .theme-button.yellow {
+    background: #FFC312;
+}
+
+.color-switcher .theme-buttons-container .theme-button.skyBlue {
+    background: #14C5FD;
+}
+
+.color-switcher .theme-buttons-container .theme-button.green {
+    background: #28E98C;
+}
+
+.color-switcher .theme-buttons-container .theme-button.gray {
+    background: #C0C0C0;
+}
+
+.color-switcher .theme-buttons-container .theme-button.softBlue {
+    background: #778BEB;
+}
+
+.color-switcher .theme-buttons-container .theme-button.fluorescentRed {
+    background: #FF5252;
+}
+
+.color-switcher .theme-buttons-container .theme-button.pink {
+    background: #FF99CC;
+}
+
+.color-switcher .theme-buttons-container .theme-button.steelPink {
+    background: #be2edd;
+}
