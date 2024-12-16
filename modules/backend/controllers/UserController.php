@@ -74,4 +74,19 @@ class UserController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionCreate()
+{
+    $model = new User();
+
+    if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        Yii::$app->session->setFlash('success', '用户创建成功！');
+        return $this->redirect(['index']);
+    }
+
+    return $this->render('create', [
+        'model' => $model,
+    ]);
+}
+
+
 }

@@ -1,434 +1,298 @@
 <div class="main-content">
-
-<div class="page-content">
-    <div class="container-fluid">
-        
-        <!-- start page title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">团队主页后台</h4>
-
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Upcube</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0">团队主页后台</h4>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Upcube</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <!-- end page title -->
 
+            <!-- Start Team Authors Row -->
+            <div class="row mt-5">
+                <!-- 团队作者：胡进喆 -->
+                <!-- 团队作者：胡进喆 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover bg-primary text-white">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <!-- 使用 Yii 路径来引用图像 -->
+                                <div class="avatar-sm">
+                                    <img src="<?= Yii::getAlias('@web/static/picture/hjz.jpg') ?>" alt="胡进喆" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-0">胡进喆</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 团队作者：闫恒瑞 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover bg-warning text-white">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-sm">
+                                    <img src="<?= Yii::getAlias('@web/static/picture/yhr.jpg') ?>" alt="闫恒瑞" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-0">闫恒瑞</h5>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 团队作者：张明昆 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover bg-success text-white">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-sm">
+                                    <img src="<?= Yii::getAlias('@web/static/picture/zmk.jpg') ?>" alt="张明昆" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-0">张明昆</h5>
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 团队作者：王博 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover bg-danger text-white">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-sm">
+                                    <img src="<?= Yii::getAlias('@web/static/picture/wb.jpg') ?>" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-0">王博</h5>
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Team Authors Row -->
+
+            <!-- Stats Row -->
+            <div class="row">
+                <!-- 用户总人数显示卡片 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <p class="text-muted mb-2">当前用户总人数</p>
+                                    <h4 class="mb-2"><?= $totalUsers ?></h4>
+                                    <p class="text-muted mb-0">
+                                        <span class="text-success fw-bold font-size-12 me-2">
+                                            <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
+                                        </span>Compared to previous period
+                                    </p>
+                                </div>
+                                <div class="avatar-sm">
+                                    <span class="avatar-title bg-primary text-white rounded-3">
+                                        <i class="ri-user-line font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 网站总帖子量卡片 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <p class="text-muted mb-2">网站总帖子量</p>
+                                    <h4 class="mb-2"><?= $totalPosts ?></h4>
+                                    <p class="text-muted mb-0">
+                                        <span class="text-success fw-bold font-size-12 me-2">
+                                            <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
+                                        </span>Compared to previous period
+                                    </p>
+                                </div>
+                                <div class="avatar-sm">
+                                    <span class="avatar-title bg-success text-white rounded-3">
+                                        <i class="mdi mdi-forum font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 帖子总点赞量卡片 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <p class="text-muted mb-2">帖子总点赞量</p>
+                                    <h4 class="mb-2"><?= $totalPostLikes ?></h4>
+                                    <p class="text-muted mb-0">
+                                        <span class="text-success fw-bold font-size-12 me-2">
+                                            <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
+                                        </span>Compared to previous period
+                                    </p>
+                                </div>
+                                <div class="avatar-sm">
+                                    <span class="avatar-title bg-warning text-white rounded-3">
+                                        <i class="mdi mdi-thumb-up font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 网站总评论量卡片 -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <p class="text-muted mb-2">网站总评论量</p>
+                                    <h4 class="mb-2"><?= $totalComments ?></h4>
+                                    <p class="text-muted mb-0">
+                                        <span class="text-success fw-bold font-size-12 me-2">
+                                            <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
+                                        </span>Compared to previous period
+                                    </p>
+                                </div>
+                                <div class="avatar-sm">
+                                    <span class="avatar-title bg-info text-white rounded-3">
+                                        <i class="mdi mdi-comment-text-outline font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end Stats Row -->
+
+            <!-- 评论总点赞量卡片 -->
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <p class="text-muted mb-2">评论总点赞量</p>
+                                    <h4 class="mb-2"><?= $totalCommentLikes ?></h4>
+                                    <p class="text-muted mb-0">
+                                        <span class="text-success fw-bold font-size-12 me-2">
+                                            <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
+                                        </span>Compared to previous period
+                                    </p>
+                                </div>
+                                <div class="avatar-sm">
+                                    <span class="avatar-title bg-danger text-white rounded-3">
+                                        <i class="mdi mdi-thumb-up font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end container-fluid -->
+    </div> <!-- end page-content -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    Copyright &copy; 2022. Company name All rights reserved.
+                    <a target="_blank" href="https://sc.chinaz.com/moban/">Website Templates</a>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- end page title -->
+    </footer>
+</div> <!-- End Main Content -->
 
-        <div class="row">
-            <div class="col-xl-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">当前在线用户数量</p>
-                                <h4 class="mb-2">0</h4>
-                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p> 
-                            </div>
-                            <div class="avatar-sm">
-                                <span class="avatar-title bg-light text-primary rounded-3">
-                                    <i class="ri-shopping-cart-2-line font-size-24"></i>  
-                                </span>
-                            </div>
-                        </div>                                            
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
-            
-            <div class="col-xl-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">网站总访问量</p>
-                                <h4 class="mb-2">938</h4>
-                                <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p>
-                            </div>
-                            <div class="avatar-sm">
-                                <span class="avatar-title bg-light text-success rounded-3">
-                                    <i class="mdi mdi-currency-usd font-size-24"></i>  
-                                </span>
-                            </div>
-                        </div>                                              
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
-            <div class="col-xl-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">今日访问量</p>
-                                <h4 class="mb-2">8246</h4>
-                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>from previous period</p>
-                            </div>
-                            <div class="avatar-sm">
-                                <span class="avatar-title bg-light text-primary rounded-3">
-                                    <i class="ri-user-3-line font-size-24"></i>  
-                                </span>
-                            </div>
-                        </div>                                              
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
-            <div class="col-xl-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="flex-grow-1">
-                                <p class="text-truncate font-size-14 mb-2">当日最大访问量</p>
-                                <h4 class="mb-2">29670</h4>
-                                <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>11.7%</span>from previous period</p>
-                            </div>
-                            <div class="avatar-sm">
-                                <span class="avatar-title bg-light text-success rounded-3">
-                                    <i class="mdi mdi-currency-btc font-size-24"></i>  
-                                </span>
-                            </div>
-                        </div>                                              
-                    </div><!-- end cardbody -->
-                </div><!-- end card -->
-            </div><!-- end col -->
-        </div><!-- end row -->
-
-        <div class="row">
-            <div class="col-xl-6">
-
-                <div class="card">
-                    <div class="card-body pb-0">
-                        <div class="float-end d-none d-md-inline-block">
-                            <div class="dropdown card-header-dropdown">
-                                <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="text-muted">Report<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item" href="#">Export</a>
-                                    <a class="dropdown-item" href="#">Import</a>
-                                    <a class="dropdown-item" href="#">Download Report</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="card-title mb-4">Email Sent</h4>
-
-                        <div class="text-center pt-3">
-                            <div class="row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <div class="d-inline-flex">
-                                        <h5 class="me-2">25,117</h5>
-                                        <div class="text-success font-size-12">
-                                            <i class="mdi mdi-menu-up font-size-14"> </i>2.2 %
-                                        </div>
-                                    </div>
-                                    <p class="text-muted text-truncate mb-0">Marketplace</p>
-                                </div><!-- end col -->
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <div class="d-inline-flex">
-                                        <h5 class="me-2">$34,856</h5>
-                                        <div class="text-success font-size-12">
-                                            <i class="mdi mdi-menu-up font-size-14"> </i>1.2 %
-                                        </div>
-                                    </div>
-                                    <p class="text-muted text-truncate mb-0">Last Week</p>
-                                </div><!-- end col -->
-                                <div class="col-sm-4">
-                                    <div class="d-inline-flex">
-                                        <h5 class="me-2">$18,225</h5>
-                                        <div class="text-success font-size-12">
-                                            <i class="mdi mdi-menu-up font-size-14"> </i>1.7 %
-                                        </div>
-                                    </div>
-                                    <p class="text-muted text-truncate mb-0">Last Month</p>
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                        </div>
-                    </div>
-                    <div class="card-body py-0 px-2">
-                        <div id="area_chart" class="apex-charts" dir="ltr"></div>
-                    </div>
-                </div><!-- end card -->
-            </div>
-            <!-- end col -->
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-body pb-0">
-                        <div class="float-end d-none d-md-inline-block">
-                            <div class="dropdown">
-                                <a class="text-reset" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="text-muted">This Years<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item" href="#">Today</a>
-                                    <a class="dropdown-item" href="#">Last Week</a>
-                                    <a class="dropdown-item" href="#">Last Month</a>
-                                    <a class="dropdown-item" href="#">This Year</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="card-title mb-4">Revenue</h4>
-
-                        <div class="text-center pt-3">
-                            <div class="row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <div>
-                                        <h5>17,493</h5>
-                                        <p class="text-muted text-truncate mb-0">Marketplace</p>
-                                    </div>
-                                </div><!-- end col -->
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <div>
-                                        <h5>$44,960</h5>
-                                        <p class="text-muted text-truncate mb-0">Last Week</p>
-                                    </div>
-                                </div><!-- end col -->
-                                <div class="col-sm-4">
-                                    <div>
-                                        <h5>$29,142</h5>
-                                        <p class="text-muted text-truncate mb-0">Last Month</p>
-                                    </div>
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                        </div>
-                    </div>
-                    <div class="card-body py-0 px-2">
-                        <div id="column_line_chart" class="apex-charts" dir="ltr"></div>
-                    </div>
-                </div><!-- end card -->
-            </div>
-            <!-- end col -->
-        </div>
-        <!-- end row -->
-
-        <div class="row">
-            <div class="col-xl-8">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="dropdown float-end">
-                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="mdi mdi-dots-vertical"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                            </div>
-                        </div>
-
-                        <h4 class="card-title mb-4">Latest Transactions</h4>
-
-                        <div class="table-responsive">
-                            <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Status</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th style="width: 120px;">Salary</th>
-                                    </tr>
-                                </thead><!-- end thead -->
-                                <tbody>
-                                    <tr>
-                                        <td><h6 class="mb-0">Charles Casey</h6></td>
-                                        <td>Web Developer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
-                                        </td>
-                                        <td>
-                                            23
-                                        </td>
-                                        <td>
-                                            04 Apr, 2022
-                                        </td>
-                                        <td>$42,450</td>
-                                    </tr>
-                                     <!-- end -->
-                                     <tr>
-                                        <td><h6 class="mb-0">Alex Adams</h6></td>
-                                        <td>Python Developer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive</div>
-                                        </td>
-                                        <td>
-                                            28
-                                        </td>
-                                        <td>
-                                            01 Aug, 2022
-                                        </td>
-                                        <td>$25,060</td>
-                                    </tr>
-                                     <!-- end -->
-                                     <tr>
-                                        <td><h6 class="mb-0">Prezy Kelsey</h6></td>
-                                        <td>Senior Javascript Developer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
-                                        </td>
-                                        <td>
-                                            35
-                                        </td>
-                                        <td>
-                                            15 Jun, 2022
-                                        </td>
-                                        <td>$59,350</td>
-                                    </tr>
-                                     <!-- end -->
-                                     <tr>
-                                        <td><h6 class="mb-0">Ruhi Fancher</h6></td>
-                                        <td>React Developer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
-                                        </td>
-                                        <td>
-                                            25
-                                        </td>
-                                        <td>
-                                            01 March, 2022
-                                        </td>
-                                        <td>$23,700</td>
-                                    </tr>
-                                     <!-- end -->
-                                     <tr>
-                                        <td><h6 class="mb-0">Juliet Pineda</h6></td>
-                                        <td>Senior Web Designer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
-                                        </td>
-                                        <td>
-                                            38
-                                        </td>
-                                        <td>
-                                            01 Jan, 2022
-                                        </td>
-                                        <td>$69,185</td>
-                                    </tr>
-                                     <!-- end -->
-                                     <tr>
-                                        <td><h6 class="mb-0">Den Simpson</h6></td>
-                                        <td>Web Designer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive</div>
-                                        </td>
-                                        <td>
-                                            21
-                                        </td>
-                                        <td>
-                                            01 Sep, 2022
-                                        </td>
-                                        <td>$37,845</td>
-                                    </tr>
-                                     <!-- end -->
-                                     <tr>
-                                        <td><h6 class="mb-0">Mahek Torres</h6></td>
-                                        <td>Senior Laravel Developer</td>
-                                        <td>
-                                            <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
-                                        </td>
-                                        <td>
-                                            32
-                                        </td>
-                                        <td>
-                                            20 May, 2022
-                                        </td>
-                                        <td>$55,100</td>
-                                    </tr>
-                                     <!-- end -->
-                                </tbody><!-- end tbody -->
-                            </table> <!-- end table -->
-                        </div>
-                    </div><!-- end card -->
-                </div><!-- end card -->
-            </div>
-            <!-- end col -->
-            <div class="col-xl-4">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="float-end">
-                            <select class="form-select shadow-none form-select-sm">
-                                <option selected="">Apr</option>
-                                <option value="1">Mar</option>
-                                <option value="2">Feb</option>
-                                <option value="3">Jan</option>
-                            </select>
-                        </div>
-                        <h4 class="card-title mb-4">Monthly Earnings</h4>
-                        
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="text-center mt-4">
-                                    <h5>3475</h5>
-                                    <p class="mb-2 text-truncate">Market Place</p>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-4">
-                                <div class="text-center mt-4">
-                                    <h5>458</h5>
-                                    <p class="mb-2 text-truncate">Last Week</p>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-4">
-                                <div class="text-center mt-4">
-                                    <h5>9062</h5>
-                                    <p class="mb-2 text-truncate">Last Month</p>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <div class="mt-4">
-                            <div id="donut-chart" class="apex-charts"></div>
-                        </div>
-                    </div>
-                </div><!-- end card -->
-            </div><!-- end col -->
-        </div>
-        <!-- end row -->
-    </div>
-    
-</div>
-<!-- End Page-content -->
-
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                Copyright &copy; 2022.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-            </div>
-            <div class="col-sm-6">
-                <div class="text-sm-end d-none d-sm-block">
-                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-</div>
-
-
+<!-- Parallax Background -->
 <div class="parallax"></div>
 
+<!-- Dynamic Background Style -->
 <style>
 body {
-    background: linear-gradient(135deg, #6e7e8e, #3c4f65); /* 渐变色背景 */
-    background-attachment: fixed; /* 背景固定 */
-    background-size: cover; /* 背景图像铺满 */
+    background: linear-gradient(135deg, #6e7e8e, #3c4f65);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-hover {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+}
+
+.page-title-box {
+    border-bottom: 2px solid #f1f1f1;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.avatar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
 }
 </style>
-
-
-<!-- end main content-->

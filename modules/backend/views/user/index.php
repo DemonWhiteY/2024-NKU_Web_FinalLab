@@ -12,6 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1 class="text-center"><?= Html::encode($this->title) ?></h1>
     </div>
 
+
     <!-- 用户列表-->
     <?php Pjax::begin(); ?>
 
@@ -29,6 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     'value' => function ($model) {
                         return $model->status == 10 ? 'Active' : 'Inactive';  // 显示状态
                     },
+                ],
+
+                [
+                    'attribute' => 'role',
+                    'value' => function ($model) {
+                        // 假设role的值是1或0，您可以根据实际情况调整这里的显示文本
+                        return $model->role == 0 ? 'Admin' : 'User';
+                    },
+                    'filter' => false, // 如果不需要在搜索框中过滤role，可以设置为false
                 ],
 
                 // 操作按钮（查看、编辑、删除）

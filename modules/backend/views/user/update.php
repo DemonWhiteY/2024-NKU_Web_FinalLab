@@ -48,16 +48,13 @@ $this->params['breadcrumbs'][] = 'Update';
             <!-- Role -->
             <div class="form-group">
                 <?= $form->field($model, 'role')->dropDownList([
-                    1 => 'Admin',
-                    2 => 'Editor',
-                    3 => 'User',
+                    0 => 'Admin',
+                    1 => 'User',
                 ], [
                     'class' => 'form-control',
                     'prompt' => 'Select Role'
                 ])->label('Role') ?>
             </div>
-
-            
 
             <!-- Submit Button -->
             <div class="form-group text-center">

@@ -83,10 +83,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                         <li><a href="<?= Url::to(['site/viewpost']) ?>">帖子广场</a></li>
                                     </ul>
                                 </li>
+                                <li class="has-submenu"><a href="<?= Url::to(['site/feedback']) ?>">留言</a>
+                                </li>
                                 <li class="has-submenu"><a href="<?= Url::to(['site/viewpost']) ?>">测试</a>
                                     <ul class="submenu-nav">
-                                        <li><a href="<?= Url::to(['site/create']) ?>">test1</a></li>
-                                        <li><a href="<?= Url::to(['site/view']) ?>">test2</a></li>
+                                        <li><a href="<?= Url::to(['site/d3demo1']) ?>">test1</a></li>
+                                        <li><a href="<?= Url::to(['site/d3demo2']) ?>">test2</a></li>
+                                        <li><a href="<?= Url::to(['site/d3demo3']) ?>">test3</a></li>
                                     </ul>
                                 </li>
                                 <?php if (!Yii::$app->user->isGuest): ?>

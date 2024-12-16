@@ -15,6 +15,8 @@ use app\models\Post;
 use app\models\Test;
 use app\models\PostLike;  // 添加这行
 use app\models\Employees;
+use app\models\Feedback;
+use yii\data\ActiveDataProvider;
 
 class SiteController extends Controller
 {
@@ -67,7 +69,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        // 获取留言数据
+        $feedbacks = Feedback::find()
+            ->orderBy(['created_at' => SORT_DESC])
+            ->limit(10)  // 限制显示最新的10条
+            ->all();
+    
+        return $this->render('index', [
+            'feedbacks' => $feedbacks,  // 传递留言数据到视图
+        ]);
     }
 
     public function actionerror()
@@ -286,20 +296,73 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionTest()
+    public function actionFeedback()
     {
-        // 测试创建点赞
-        $postLike = new PostLike();
-        $postLike->post_id = 1;
-        $postLike->user_id = 1;
-        var_dump($postLike->save()); // 应该返回 true
+        $model = new Feedback();
+        
+        // 创建数据提供者
+        $dataProvider = new ActiveDataProvider([
+            'query' => Feedback::find()->orderBy(['created_at' => SORT_DESC]),
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+        ]);
 
-        // 测试重复点赞
-        $duplicateLike = new PostLike();
-        $duplicateLike->post_id = 1;
-        $duplicateLike->user_id = 1;
-        var_dump($duplicateLike->save()); // 应该返回 false，因为违反唯一约束
+        // 处理表单提交
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', '感谢您的留言！');
+                return $this->refresh(); // 刷新页面
+            } else {
+                Yii::$app->session->setFlash('error', '留言提交失败，请检查输入！');
+            }
+        }
+
+        return $this->render('feedback', [
+            'model' => $model,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
+    public function actionD3demo1()
+    {
+        return $this->render('d3demo1');
+    }
 
+    public function actionD3demo2()
+    {
+        // 从 feedback 表获取留言列表
+        $feedbacks = Feedback::find()
+            ->select(['id', 'author_name', 'content']) // 假设是 title 和 body 字段
+            ->asArray()
+            ->all();
+        
+        return $this->render('d3demo2', [
+            'feedbacks' => $feedbacks
+        ]);
+    }
+
+    public function actionGetFeedback($id)
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        
+        $feedback = Feedback::findOne($id);
+        if ($feedback) {
+            return [
+                'success' => true,
+                'content' => $feedback->body // 使用 body 字段
+            ];
+        }
+        return ['success' => false];
+    }
+
+    public function actionD3demo3()
+    {
+        // 传递必要的数据到视图
+        $year = date('Y'); // 或者从请求中获取具体年份
+        
+        return $this->render('d3demo3', [
+            'year' => $year,
+        ]);
+    }
 }

@@ -28,10 +28,28 @@ class EmployeesController extends Controller
 
     public function actionEmployee($id)
     {
-        $employee = $this->findModel($id);  // 根据员工ID查找员工数据
+        $employee = $this->findModel($id); // 根据员工ID查找员工数据
 
-        return $this->render('employees', [
-            'model' => $employee,  // 将员工数据传递给视图
+        // 根据不同的id渲染不同的视图
+        switch ($id) {
+            case 1:
+                $view = 'employees1';
+                break;
+            case 2:
+                $view = 'employees2';
+                break;
+            case 3:
+                $view = 'employees3';
+                break;
+            case 0:
+                $view = 'employees0';
+                break;
+            default:
+                $view = 'employees'; // 默认视图
+        }
+
+        return $this->render($view, [
+            'model' => $employee, // 将员工数据传递给视图
         ]);
     }
 

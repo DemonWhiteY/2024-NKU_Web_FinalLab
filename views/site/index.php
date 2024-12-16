@@ -1,7 +1,7 @@
 <?php
 
 /** @var yii\web\View $this */
-
+use yii\helpers\Html;
 $this->title = 'My Yii Application';
 ?>
 
@@ -38,7 +38,7 @@ $this->title = 'My Yii Application';
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="thumb">
-                                                <div class="bg-thumb bg-img" data-bg-img="assets/img/slider/2.webp">
+                                                <div class="bg-thumb bg-img" data-bg-img="assets/img/slider/mimi.png">
                                                 </div>
                                             </div>
                                         </div>
@@ -402,102 +402,48 @@ $this->title = 'My Yii Application';
                 <div class="col-lg-12">
                     <div class="swiper-container testimonial-slider-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <!--== Start Testimonial Item ==-->
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p>“这是一条留言”.</p>
-                                        <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon"
-                                            width="252" height="191">
-                                    </div>
-                                    <div class="client-info">
-                                        <div class="desc">
-                                            <h5>2024.12.10</h5>
-                                            <h4>张明昆</h4>
+                            <?php if (!empty($feedbacks)): ?>
+                                <?php foreach ($feedbacks as $feedback): ?>
+                                    <div class="swiper-slide">
+                                        <!--== Start Testimonial Item ==-->
+                                        <div class="testimonial-item">
+                                            <div class="content">
+                                                <p>"<?= Html::encode($feedback->content) ?>"</p>
+                                                <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon"
+                                                    width="252" height="191">
+                                            </div>
+                                            <div class="client-info">
+                                                <div class="desc">
+                                                    <h5><?= Yii::$app->formatter->asDate($feedback->created_at) ?></h5>
+                                                    <h4><?= Html::encode($feedback->author_name) ?></h4>
+                                                </div>
+                                                <div class="rating">
+                                                    <?php
+                                                    for ($i = 1; $i <= 5; $i++) {
+                                                        if ($i <= $feedback->rating) {
+                                                            echo '<span class="rating-color icofont-star"></span>';
+                                                        } else {
+                                                            echo '<span class="icofont-star"></span>';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
                                         </div>
-
+                                        <!--== End Testimonial Item ==-->
                                     </div>
-                                </div>
-                                <!--== End Testimonial Item ==-->
-                            </div>
-                            <div class="swiper-slide">
-                                <!--== Start Testimonial Item ==-->
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p>“There are many varioution of Lorem Ipsum. lorem has been industry
-                                            standard dummy text sinces when unknowns printer took galley type and
-                                            scram make type specimen simply dummy text”.</p>
-                                        <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon"
-                                            width="252" height="191">
-                                    </div>
-                                    <div class="client-info">
-                                        <div class="desc">
-                                            <h5>Founder of Eleren</h5>
-                                            <h4>Elisa Marshall</h4>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="icofont-star"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--== End Testimonial Item ==-->
-                            </div>
-                            <div class="swiper-slide">
-                                <!--== Start Testimonial Item ==-->
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p>“Lorem Ipsum simply dummy text printing typesetting industry lorem has
-                                            been industry standard dummy text sinces when unknowns printer took
-                                            galley type and scram make type specimen book”.</p>
-                                        <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon"
-                                            width="252" height="191">
-                                    </div>
-                                    <div class="client-info">
-                                        <div class="desc">
-                                            <h5>Founder of Musion</h5>
-                                            <h4>Shoshana Horsley</h4>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="icofont-star"></span>
-                                            <span class="icofont-star"></span>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="content">
+                                            <p>"暂无留言"</p>
+                                            <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon"
+                                                width="252" height="191">
                                         </div>
                                     </div>
                                 </div>
-                                <!--== End Testimonial Item ==-->
-                            </div>
-                            <div class="swiper-slide">
-                                <!--== Start Testimonial Item ==-->
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p>“Lorem Ipsum simply dummy text printing typesetting industry lorem has
-                                            been industry standard dummy text sinces when unknowns printer took
-                                            galley type and scram make type specimen book”.</p>
-                                        <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon"
-                                            width="252" height="191">
-                                    </div>
-                                    <div class="client-info">
-                                        <div class="desc">
-                                            <h5>Founder of Musion</h5>
-                                            <h4>Elisa Marshall</h4>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="rating-color icofont-star"></span>
-                                            <span class="icofont-star"></span>
-                                            <span class="icofont-star"></span>
-                                            <span class="icofont-star"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--== End Testimonial Item ==-->
-                            </div>
+                            <?php endif; ?>
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>
@@ -507,6 +453,13 @@ $this->title = 'My Yii Application';
         </div>
     </section>
     <!--== End Testimonial Area Wrapper ==-->
+
+    // 如果需要限制显示的留言数量，可以在控制器中这样修改：
+    // $feedbacks = Feedback::find()
+    // ->orderBy(['created_at' => SORT_DESC])
+    // ->limit(10) // 限制显示最新的10条
+    // ->all();
+    ?>
 
     <!--== Start Divider Area Wrapper ==-->
 
