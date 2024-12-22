@@ -12,7 +12,9 @@ use app\models\RegisterForm;
 use app\models\ContactForm;
 use app\models\EmailForm;
 use app\models\Post;
+use app\models\PostTag;
 use app\models\Test;
+use app\models\Tags;
 use app\models\PostLike;  // 添加这行
 use app\models\Employees;
 use app\models\Feedback;
@@ -74,7 +76,7 @@ class SiteController extends Controller
             ->orderBy(['created_at' => SORT_DESC])
             ->limit(10)  // 限制显示最新的10条
             ->all();
-    
+
         return $this->render('index', [
             'feedbacks' => $feedbacks,  // 传递留言数据到视图
         ]);
@@ -267,6 +269,49 @@ class SiteController extends Controller
         ]);
     }
 
+
+    public function actionSearchpost($key)
+    {
+        $query = \app\models\Post::find()
+            ->where(['like', 'name', $key])
+            ->orderBy(['create_at' => SORT_DESC]);
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 10, // 每页显示10条
+            ],
+        ]);
+
+        return $this->render('viewpost', [
+            'dataProvider' => $dataProvider  // 传递 dataProvider 到视图
+        ]);
+    }
+
+    public function actionViewtag($id)
+    {
+
+        $ids = PostTag::find()->select('post_id')->where(['tag_id' => $id])->orderBy(['create_at' => SORT_DESC]);
+        ;
+
+        // 创建查询条件，筛选出 id 在 $ids 数组中的 Post
+        $query = \app\models\Post::find()
+            ->where(['id' => $ids])  // 使用 'id' => $ids 来过滤
+            ->orderBy(['create_at' => SORT_DESC]);
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 10, // 每页显示10条
+            ],
+        ]);
+
+        return $this->render('viewpost', [
+            'dataProvider' => $dataProvider  // 传递 dataProvider 到视图
+        ]);
+    }
+
+
+
+
     public function actionCreate()
     {
         // 创建新的模型实例
@@ -299,7 +344,7 @@ class SiteController extends Controller
     public function actionFeedback()
     {
         $model = new Feedback();
-        
+
         // 创建数据提供者
         $dataProvider = new ActiveDataProvider([
             'query' => Feedback::find()->orderBy(['created_at' => SORT_DESC]),
@@ -336,7 +381,7 @@ class SiteController extends Controller
             ->select(['id', 'author_name', 'content']) // 假设是 title 和 body 字段
             ->asArray()
             ->all();
-        
+
         return $this->render('d3demo2', [
             'feedbacks' => $feedbacks
         ]);
@@ -345,7 +390,7 @@ class SiteController extends Controller
     public function actionGetFeedback($id)
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        
+
         $feedback = Feedback::findOne($id);
         if ($feedback) {
             return [
@@ -360,9 +405,19 @@ class SiteController extends Controller
     {
         // 传递必要的数据到视图
         $year = date('Y'); // 或者从请求中获取具体年份
-        
+
         return $this->render('d3demo3', [
             'year' => $year,
+        ]);
+    }
+
+
+    public function actionTags()
+    {
+        $tags = Tags::find()->all(); // 获取所有标签
+
+        return $this->render('tags', [
+            'tags' => $tags, // 将数据传递给视图
         ]);
     }
 }

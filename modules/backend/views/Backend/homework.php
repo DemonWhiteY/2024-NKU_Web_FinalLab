@@ -19,6 +19,7 @@ $this->title = 'Homework';
 
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
+
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -154,7 +155,9 @@ $this->title = 'Homework';
         }
 
         @media (max-width: 768px) {
-            .single-services, .single-price {
+
+            .single-services,
+            .single-price {
                 margin-bottom: 30px;
             }
 
@@ -168,6 +171,7 @@ $this->title = 'Homework';
         }
     </style>
 </head>
+
 <body>
     <section class="services-area section-gap">
         <div class="container">
@@ -175,7 +179,7 @@ $this->title = 'Homework';
                 <div class="menu-content col-lg-7">
                     <div class="title text-center">
                         <h1>团队作业模块</h1>
-                        <p>The team homework download for team ddl驱动队</p>
+                        <p>The team homework download for team 喵喵大魔王队</p>
                     </div>
                 </div>
             </div>
@@ -184,75 +188,90 @@ $this->title = 'Homework';
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <span class="lnr lnr-home"></span>
-                        <a href="../../../data/team/ddl驱动队.zip" download="ddl驱动队.zip">
+                        <a
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'team', 'fileName' => '喵喵大魔王队.zip']) ?>">
                             <h4>下载全部团队作业文件</h4>
                         </a>
                         <p>Include All Teamwork Files</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
-                        <span class="lnr lnr-laptop-phone"></span>
-                        <a href="doc/项目需求文档.docx" download="项目需求文档.docx">
+                        <span class="lnr lnr-home"></span>
+                        <a
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'team', 'fileName' => '喵喵大魔王队_需求文档(2213045_2211585_2212043_2211642).pdf']) ?>">
                             <h4>需求文档</h4>
                         </a>
-                        <p>Made by 朱璐</p>
+                        <p>Made by 胡进喆</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <span class="lnr lnr-file-empty"></span>
-                        <a href="../../../data/team/ddl驱动队_设计文档(2012810_18).pdf" download="ddl驱动队_设计文档(2012810_18).pdf">
+                        <a
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'team', 'fileName' => '喵喵大魔王队_设计文档(2213045_2211585_2212043_2211642).pdf']) ?>">
                             <h4>设计文档</h4>
                         </a>
-                        <p>Made by 管昀玫</p>
+                        <p>Made by 胡进喆</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <span class="lnr lnr-picture"></span>
-                        <a href="../../../data/team/ddl驱动队_实现文档(2012810_18).pdf" download="ddl驱动队_实现文档(2012810_18).pdf">
+                        <a
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'team', 'fileName' => '喵喵大魔王队_实现文档(2213045_2211585_2212043_2211642).pdf']) ?>">
                             <h4>实现文档</h4>
                         </a>
-                        <p>Made by 孙艺齐</p>
+                        <p>Made by 胡进喆、张明昆、闫恒瑞、王博</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <span class="lnr lnr-tablet"></span>
-                        <a href="../../../data/team/ddl驱动队_用户手册(2012810_18).pdf" download="ddl驱动队_用户手册(2012810_18).pdf">
+                        <a
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'team', 'fileName' => '喵喵大魔王队_用户手册(2213045_2211585_2212043_2211642).pdf']) ?>">
                             <h4>用户手册</h4>
                         </a>
-                        <p>Made by 宋佳蓁，管昀玫</p>
+                        <p>Made by 张明昆</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <span class="lnr lnr-enter"></span>
-                        <a href="../../../data/team/ddl驱动队_部署文档(2012810_18).pdf" download="ddl驱动队_部署文档(2012810_18).pdf">
+                        <a
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'team', 'fileName' => '喵喵大魔王队_部署文档(2213045_2211585_2212043_2211642).pdf']) ?>">
                             <h4>部署文档</h4>
                         </a>
-                        <p>Made by 宋佳蓁</p>
+                        <p>Made by 闫恒瑞</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <span class="lnr lnr-pie-chart"></span>
-                        <a href="../../../data/team/ddl驱动队_项目展示(2012810_18).pptx" download="ddl驱动队_项目展示(2012810_18).pdf">
+                        <a
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'team', 'fileName' => '喵喵大魔王队_项目展示PPT(2213045_2211585_2212043_2211642).pdf']) ?>">
                             <h4>项目展示PPT</h4>
                         </a>
-                        <p>Made by 朱璐</p>
+                        <p>Made by 张明昆</p>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <span class="lnr lnr-rocket"></span>
-                        <a href="#"><h4>More...</h4></a>
+                        <a href="#">
+                            <h4>More...</h4>
+                        </a>
                         <p>Complementing...</p>
                     </div>
                 </div>
-            </div>
-        </div>
+
     </section>
 
     <!-- Team Facts Section -->
@@ -260,15 +279,15 @@ $this->title = 'Homework';
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 single-fact">
-                    <h1 class="counter">131801</h1>
+                    <h1 class="counter">435231</h1>
                     <p>Lines of Code</p>
                 </div>
                 <div class="col-lg-3 col-md-6 single-fact">
-                    <h1 class="counter">207</h1>
+                    <h1 class="counter">16</h1>
                     <p>Commits</p>
                 </div>
                 <div class="col-lg-3 col-md-6 single-fact">
-                    <h1 class="counter">5</h1>
+                    <h1 class="counter">6</h1>
                     <p>Meetings</p>
                 </div>
                 <div class="col-lg-3 col-md-6 single-fact">
@@ -292,76 +311,79 @@ $this->title = 'Homework';
             </div>
             <div class="row">
                 <!-- Single Homework File -->
+
+
                 <div class="col-lg-3 col-md-6 single-price">
                     <div class="top-part">
-                        <h1 class="package-no">全部作业</h1>
-                        <h4>全部成员</h4>
-                        <p class="mt-10">4 individuals</p>
+                        <h1 class="package-no">2211585</h1>
+                        <p class="mt-10">个人作业</p>
                     </div>
                     <div class="package-list">
                         <ul>
-                            <li>Web前端初探</li>
-                            <li>Web前端设计</li>
+                            <li>张明昆</li>
                         </ul>
                     </div>
                     <div class="bottom-part">
-                     
-                        <a class="price-btn" href="../../../data/personal/全部成员所有作业.zip" download="全部成员所有作业">点击此处下载全部</a>
+                        <a class="price-btn"
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'personal', 'fileName' => '2211585张明昆个人作业.zip']) ?>"
+                            download="2211585张明昆个人作业.zip">点击此处下载个人文件</a>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6 single-price">
                     <div class="top-part">
-                        <h1 class="package-no">作业1</h1>
-                        <h4>Web前端初探</h4>
-                        <p class="mt-10">单独下载</p>
+                        <h1 class="package-no">2213043</h1>
+                        <p class="mt-10">个人作业</p>
                     </div>
                     <div class="package-list">
                         <ul>
-                            <li>宋佳蓁 管昀玫</li>
-                            <li>朱璐 孙艺齐</li>
+                            <li>闫恒瑞</li>
                         </ul>
                     </div>
                     <div class="bottom-part">
-                         
-                        <a class="price-btn" href="../../../data/personal/全部成员作业1.zip" download="全部成员作业1">点击此处下载</a>
+                        <a class="price-btn"
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'personal', 'fileName' => '2213043闫恒瑞个人作业.zip']) ?>"
+                            download="2213043闫恒瑞个人作业.zip">点击此处下载个人文件</a>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6 single-price">
                     <div class="top-part">
-                        <h1 class="package-no">作业2</h1>
-                        <h4>Web前端设计</h4>
-                        <p class="mt-10">单独下载</p>
+                        <h1 class="package-no">2211642</h1>
+                        <p class="mt-10">个人作业</p>
                     </div>
                     <div class="package-list">
                         <ul>
-                            <li>宋佳蓁 管昀玫</li>
-                            <li>朱璐 孙艺齐</li>
+                            <li>王博</li>
                         </ul>
                     </div>
                     <div class="bottom-part">
-                     
-                        <a class="price-btn" href="../../../data/personal/全部成员作业2.zip" download="全部成员作业2">点击此处下载</a>
+                        <a class="price-btn"
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'personal', 'fileName' => '2211642王博个人作业.zip']) ?>"
+                            download="2211642王博个人作业.zip">点击此处下载个人文件</a>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6 single-price">
                     <div class="top-part">
-                        <h1 class="package-no">作业3</h1>
-                        <h4>开源建站工具初试文档</h4>
-                        <p class="mt-10">单独下载</p>
+                        <h1 class="package-no">2213045</h1>
+                        <p class="mt-10">个人作业</p>
                     </div>
                     <div class="package-list">
                         <ul>
-                            <li>宋佳蓁 管昀玫</li>
-                            <li>朱璐 孙艺齐</li>
+                            <li>胡进喆</li>
                         </ul>
                     </div>
                     <div class="bottom-part">
-                 
-                        <a class="price-btn" href="../../../data/personal/全部成员作业3.zip" download="全部成员作业3">点击此处下载</a>
+                        <a class="price-btn"
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'personal', 'fileName' => '2213045胡进喆个人作业.zip']) ?>"
+                            download="2213045胡进喆个人作业.zip">点击此处下载个人文件</a>
                     </div>
                 </div>
-            </div>
-        </div>
+
+
+
     </section>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+use app\models\PostForm;
 use Yii;
 use app\models\Comment;
 use yii\web\Controller;
@@ -31,6 +32,7 @@ class PostController extends Controller
         $model = new Post();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
             Yii::$app->session->setFlash('success', '添加成功！');
             return $this->redirect(['index']);
         }
@@ -46,10 +48,10 @@ class PostController extends Controller
         if ($post === null) {
             throw new NotFoundHttpException('帖子不存在');
         }
-    
+
         // 创建新的评论模型
         $comment = new Comment();
-        
+
         // 处理评论提交
         if ($comment->load(Yii::$app->request->post())) {
             $comment->post_id = $id;
@@ -59,14 +61,14 @@ class PostController extends Controller
                 return $this->refresh();
             }
         }
-    
+
         // 获取这个帖子的所有评论
         $comments = Comment::find()
             ->where(['post_id' => $id])
             ->with(['user'])  // 预加载用户信息
             ->orderBy(['created_at' => SORT_DESC])
             ->all();
-    
+
         return $this->render('detail', [
             'post' => $post,
             'newComment' => $comment,
@@ -80,18 +82,18 @@ class PostController extends Controller
             Yii::$app->session->setFlash('error', '请先登录');
             return $this->redirect(['site/login']);
         }
-    
+
         $post = Post::findOne($id);
         if ($post === null) {
             throw new NotFoundHttpException('帖子不存在');
         }
-    
+
         $userId = Yii::$app->user->id;
         $existingLike = PostLike::findOne([
             'post_id' => $id,
             'user_id' => $userId,
         ]);
-    
+
         if ($existingLike) {
             $existingLike->delete();
             Yii::$app->session->setFlash('success', '取消点赞成功');
@@ -102,7 +104,7 @@ class PostController extends Controller
             $like->save();
             Yii::$app->session->setFlash('success', '点赞成功');
         }
-    
+
         return $this->redirect(['post/detail', 'id' => $id]);
     }
 }

@@ -14,11 +14,12 @@ use yii\helpers\Html;
         <th>创建时间</th>
     </tr>
     <?php foreach ($tests as $test): ?>
-    <tr>
-        <td><?= $test->id ?></td>
-        <td><?= Html::encode($test->name) ?></td>
-        <td><?= Html::encode($test->content) ?></td>
-        <td><?= $test->created_at ?></td>
-    </tr>
+        <tr>
+            <td><?= $test->id ?></td>
+            <td><?= Html::encode($test->name) ?></td>
+            <td><?= Html::encode($test->content) ?></td>
+
+            <td><?= $test->created_at ?></td>
+        </tr>
     <?php endforeach; ?>
 </table>

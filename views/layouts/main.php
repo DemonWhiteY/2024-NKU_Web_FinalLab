@@ -85,12 +85,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                 </li>
                                 <li class="has-submenu"><a href="<?= Url::to(['site/feedback']) ?>">留言</a>
                                 </li>
-                                <li class="has-submenu"><a href="<?= Url::to(['site/viewpost']) ?>">测试</a>
-                                    <ul class="submenu-nav">
-                                        <li><a href="<?= Url::to(['site/d3demo1']) ?>">test1</a></li>
-                                        <li><a href="<?= Url::to(['site/d3demo2']) ?>">test2</a></li>
-                                        <li><a href="<?= Url::to(['site/d3demo3']) ?>">test3</a></li>
-                                    </ul>
+                                <li class="has-submenu"><a href="<?= Url::to(['site/tags']) ?>">标签</a>
+                                </li>
+                                <li class="has-submenu"><a href="<?= Url::to(['site/d3demo2']) ?>">词云</a>
+
                                 </li>
                                 <?php if (!Yii::$app->user->isGuest): ?>
 
@@ -158,7 +156,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 <div class="row">
                     <div class="col-md-6 col-lg-4 col-xl-3">
                         <div class="widget-item">
-                            <h4 class="widget-title">最新博客</h4>
+                            <h4 class="widget-title">最新发帖</h4>
                             <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#dividerId-1">Latest Post</h4>
                             <div id="dividerId-1" class="collapse widget-collapse-body">
@@ -166,17 +164,17 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <div class="blog-post-item">
                                         <div class="content">
                                             <h4 class="title"><i class="icon icofont-minus"></i> <a
-                                                    href="blog-details.html">豆腐脑甜的好吃还是咸的好吃</a></h4>
+                                                    href="blog-details.html">GPT-4o mini：AI技术的平民化革命</a></h4>
                                             <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i>
-                                                    28/05/2024</a></div>
+                                                    27/07/2024</a></div>
                                         </div>
                                     </div>
                                     <div class="blog-post-item">
                                         <div class="content">
                                             <h4 class="title"><i class="icon icofont-minus"></i> <a
-                                                    href="blog-details.html">图社区发现算法--Leiden算法</a></h4>
+                                                    href="blog-details.html">AI：助力开发者翱翔，而非抢夺其舞台</a></h4>
                                             <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i>
-                                                    31/05/2024</a></div>
+                                                    09/12/2024</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -191,11 +189,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             <div id="dividerId-2" class="collapse widget-collapse-body">
                                 <nav class="widget-menu-wrap">
                                     <ul class="nav-menu nav">
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>组长：张明昆</a></li>
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>成员：闫恒瑞</a></li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 1]) ?>"></i>成员：张明昆</a>
+                                        </li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 1]) ?>"></i>成员：闫恒瑞</a>
+                                        </li>
 
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>成员：胡进喆</a></li>
-                                        <li><a href="service-details.html"><i class="icofont-minus"></i>成员：王博</a></li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 2]) ?>"></i>成员：胡进喆</a>
+                                        </li>
+                                        <li><a href="<?= Url::to(['employees/employee', 'id' => 3]) ?>"></i>成员：王博</a>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>

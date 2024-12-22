@@ -1,3 +1,12 @@
+<style>
+
+.new-col-lg-8 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+</style>
+
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -29,13 +38,10 @@ $this->title = $post->name;
     <!--== End Page Title Area ==-->
 </main>
 
-<?= Html::beginForm(['post/like', 'id' => $post->id], 'post') ?>
-    <?= Html::submitButton('点赞 (' . $post->getLikeCount() . ')', ['class' => 'btn btn-primary']) ?>
-<?= Html::endForm() ?>
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-8">
+        <div class="new-col-lg-8">
             <!-- 返回按钮 -->
             <div class="mb-3 mt-3">
                 <?= Html::a('返回列表', ['site/index'], ['class' => 'btn btn-secondary']) ?>
@@ -48,6 +54,9 @@ $this->title = $post->name;
                     <?= Html::encode($post->content) ?>
                 </div>
             </div>
+            <?= Html::beginForm(['post/like', 'id' => $post->id], 'post') ?>
+                <?= Html::submitButton('点赞 (' . $post->getLikeCount() . ')', ['class' => 'btn btn-primary']) ?>
+            <?= Html::endForm() ?>
 
             <!-- 评论表单 -->
             <?php if (!Yii::$app->user->isGuest): ?>

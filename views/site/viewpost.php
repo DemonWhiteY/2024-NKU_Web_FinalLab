@@ -1,3 +1,18 @@
+<style>
+.about-area .container {
+    width: 100%; /* 使容器宽度占满整个页面 */
+    padding: 0; /* 移除内边距 */
+}
+
+.about-area .row {
+    width: 100%; /* 使行宽度占满整个页面 */
+}
+.new-col-lg-8 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+</style>
 <?php
 /**
  * 帖子列表视图
@@ -15,7 +30,7 @@ $this->title = '帖子列表';
 
 <main class="main-content">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area bg-img" data-bg-img="assets/img/photos/bg2.webp">
+    <section class="page-title-area bg-img" data-bg-img="static/picture/new/3.png">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 m-auto">
@@ -36,7 +51,7 @@ $this->title = '帖子列表';
     <section class="about-area">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="new-col-lg-8">
                 <!-- 页面标题 -->
                 <div class="section-title text-center mt-5 pt-4">
                     <h1><?= Html::encode($this->title) ?></h1>
