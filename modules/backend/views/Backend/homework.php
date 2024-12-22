@@ -332,7 +332,7 @@ $this->title = 'Homework';
 
                 <div class="col-lg-3 col-md-6 single-price">
                     <div class="top-part">
-                        <h1 class="package-no">2213043</h1>
+                        <h1 class="package-no">2212043</h1>
                         <p class="mt-10">个人作业</p>
                     </div>
                     <div class="package-list">
@@ -342,8 +342,8 @@ $this->title = 'Homework';
                     </div>
                     <div class="bottom-part">
                         <a class="price-btn"
-                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'personal', 'fileName' => '2213043闫恒瑞个人作业.zip']) ?>"
-                            download="2213043闫恒瑞个人作业.zip">点击此处下载个人文件</a>
+                            href="<?= \yii\helpers\Url::to(['backend/download-file', 'type' => 'personal', 'fileName' => '2212043闫恒瑞个人作业.zip']) ?>"
+                            download="2212043闫恒瑞个人作业.zip">点击此处下载个人文件</a>
                     </div>
                 </div>
 

@@ -9,6 +9,7 @@ use app\models\Post;
 use app\models\PostLike;
 use app\models\Comment;
 use app\models\CommentLike;
+use app\models\Feedback;
 use yii\web\NotFoundHttpException;
 /**
  * Default controller for the `backend` module
@@ -34,6 +35,7 @@ class BackendController extends Controller
         // 统计点赞总数
         $totalCommentLikes = CommentLike::find()->count();
 
+        $totalFeedbacks = FeedBack::find()->count();
 
         // 渲染 index 视图，并传递 totalUsers 变量
         return $this->render('index', [
@@ -42,6 +44,7 @@ class BackendController extends Controller
             'totalPostLikes' => $totalPostLikes,  // 点赞总数
             'totalComments' => $totalComments,  // 评论总数
             'totalCommentLikes' => $totalCommentLikes,  // 点赞总数
+            'totalFeedbacks' => $totalFeedbacks,  // 反馈总数
         ]);
     }
 
