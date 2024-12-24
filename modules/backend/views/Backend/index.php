@@ -1,3 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 <div class="main-content">
     <div class="page-content">
         <div class="container-fluid">
@@ -192,29 +195,69 @@
 
             <!-- 评论总点赞量卡片 -->
             <div class="row">
-                <div class="col-xl-3 col-md-6">
-                    <div class="card card-hover">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1">
-                                    <p class="text-muted mb-2">评论总点赞量</p>
-                                    <h4 class="mb-2"><?= $totalCommentLikes ?></h4>
-                                    <p class="text-muted mb-0">
-                                        <span class="text-success fw-bold font-size-12 me-2">
-                                            <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
-                                        </span>Compared to previous period
-                                    </p>
-                                </div>
-                                <div class="avatar-sm">
-                                    <span class="avatar-title bg-danger text-white rounded-3">
-                                        <i class="mdi mdi-thumb-up font-size-24"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+    <!-- 评论总点赞量模块 -->
+    <div class="col-xl-3 col-md-6">
+        <div class="card card-hover">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <p class="text-muted mb-2">评论总点赞量</p>
+                        <h4 class="mb-2"><?= $totalCommentLikes ?></h4>
+                        <p class="text-muted mb-0">
+                            <span class="text-success fw-bold font-size-12 me-2">
+                                <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
+                            </span>Compared to previous period
+                        </p>
+                    </div>
+                    <div class="avatar-sm">
+                        <span class="avatar-title bg-danger text-white rounded-3">
+                            <i class="mdi mdi-thumb-up font-size-24"></i>
+                        </span>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- 留言总量模块 -->
+  <!-- 留言总量模块 -->
+<div class="col-xl-3 col-md-6">
+    <div class="card card-hover">
+        <div class="card-body">
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                    <p class="text-muted mb-2">留言总量</p>
+                    <h4 class="mb-2"><?= $totalFeedbacks ?></h4>
+                    <p class="text-muted mb-0">
+                        <span class="text-success fw-bold font-size-12 me-2">
+                            <i class="ri-arrow-right-up-line me-1 align-middle"></i> Stable
+                        </span>Compared to previous period
+                    </p>
+                </div>
+                <div class="avatar-sm">
+                    <span class="avatar-title bg-info text-white rounded-3">
+                        <i class="mdi mdi-email font-size-24"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">动态数据柱状图</h4>
+                <canvas id="barChart" style="max-height: 400px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
         </div> <!-- end container-fluid -->
     </div> <!-- end page-content -->
@@ -296,3 +339,81 @@ body {
     padding: 10px 0;
 }
 </style>
+
+
+<script>
+    // 获取动态数据（PHP传递的变量）
+    const data = {
+        labels: ["总用户数", "总帖子数", "帖子点赞量", "总评论量", "评论点赞量", "留言总量"],
+        datasets: [{
+            label: '统计数据',
+            backgroundColor: [
+                '#007bff', // 用户数
+                '#28a745', // 帖子数
+                '#ffc107', // 帖子点赞量
+                '#17a2b8', // 评论量
+                '#dc3545', // 评论点赞量
+                '#6610f2'  // 留言总量 (新颜色)
+            ],
+            borderColor: [
+                '#007bff',
+                '#28a745',
+                '#ffc107',
+                '#17a2b8',
+                '#dc3545',
+                '#6610f2'
+            ],
+            borderWidth: 1,
+            data: [
+                <?= $totalUsers ?>, 
+                <?= $totalPosts ?>, 
+                <?= $totalPostLikes ?>, 
+                <?= $totalComments ?>, 
+                <?= $totalCommentLikes ?>, 
+                <?= $totalFeedbacks ?>
+            ],
+        }]
+    };
+
+    // 配置柱状图
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return `${tooltipItem.raw}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: "类别"
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: "总量"
+                    }
+                }
+            }
+        }
+    };
+
+    // 渲染柱状图
+    const barChart = new Chart(
+        document.getElementById('barChart'),
+        config
+    );
+</script>

@@ -1,6 +1,10 @@
 <?php
 // controllers/CommentController.php
-
+// controllers/CommentController.php
+// 注释：该控制器用于处理与评论相关的操作，包括点赞和取消点赞功能。
+// 如果用户未登录，将重定向到登录页面；
+// 若评论不存在，将抛出404错误；
+// 用户可以对评论进行点赞或取消点赞，操作后会返回到相应的帖子详情页，并显示操作结果的提示信息。
 namespace app\controllers;
 
 use Yii;

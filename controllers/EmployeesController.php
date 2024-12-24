@@ -7,9 +7,13 @@ use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
 /**
- * UserController implements the CRUD actions for User model.
+ * EmployeesController 处理员工模型的CRUD操作。
+ * 该控制器提供员工信息的显示功能，能够根据员工ID渲染不同的视图。
+ * 主要包含以下功能：
+ * - 行为过滤器：限制某些操作的请求方式（如更新操作只允许POST请求）。
+ * - actionEmployee：根据传入的员工ID查找员工数据，并渲染相应的视图。
+ * - findModel：根据员工ID查找员工记录，如果记录不存在，则抛出404错误。
  */
 class EmployeesController extends Controller
 {

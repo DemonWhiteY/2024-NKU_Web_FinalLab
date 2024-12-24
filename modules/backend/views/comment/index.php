@@ -1,4 +1,11 @@
 <?php
+/**
+ * Team: 喵喵大魔王队
+ * Coding by 胡进喆 2213045
+ * Date: 2024-12-12
+ * This is the main layout of Backend-Comment.
+ */
+
 use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
@@ -70,7 +77,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     'delete' => function ($url, $model) {
                         return Html::a('<i class="fas fa-trash"></i>', $url, [
                             'class' => 'btn btn-danger btn-sm',
-                            'data-method' => 'post',
                             'data-confirm' => '确定要删除这条评论吗？',
                         ]);
                     },

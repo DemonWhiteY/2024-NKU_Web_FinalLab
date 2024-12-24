@@ -1,59 +1,52 @@
 <?php
-
+/**
+ * Team: 喵喵大魔王队
+ * Coding by 胡进喆 2213045
+ * Date: 2024-12-14
+ * This is the main layout of Backend-Post.
+ */
 namespace app\modules\backend\controllers;
+
 use Yii;
 use yii\web\Controller;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
-use app\models\Post;
+use app\models\PostLike;
+use app\models\PostLikeSearch;
 
-class PostController extends Controller
+class PostlikeController extends Controller
 {
     public $layout = 'adamin'; // 使用后台布局
 
-    // 显示 Post 列表
+    // 显示 PostLike 列表
     public function actionIndex()
-    {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Post::find(),
-            'pagination' => ['pageSize' => 10], // 每页显示 10 条数据
-        ]);
+{
+    $searchModel = new PostLikeSearch();
+    $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
+    return $this->render('index', [
+        'searchModel' => $searchModel,
+        'dataProvider' => $dataProvider,
+    ]);
+}
 
-    // 创建 Post
+
+    // 创建 PostLike
     public function actionCreate()
     {
-        $model = new Post();
+        $model = new PostLike();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Post 创建成功！');
+            Yii::$app->session->setFlash('success', 'PostLike 创建成功！');
             return $this->redirect(['index']);
         }
 
         return $this->render('create', ['model' => $model]);
     }
 
-    // 编辑 Post
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Post 更新成功！');
-            return $this->redirect(['index']);
-        }
-
-        return $this->render('update', ['model' => $model]);
-    }
-
-    // 删除 Post
+    // 删除 PostLike
     public function actionDelete($id)
     {
-        // 根据 ID 查找模型
         $model = $this->findModel($id);
 
         if ($model !== null) {
@@ -69,7 +62,7 @@ class PostController extends Controller
     // 根据 ID 查找模型
     protected function findModel($id)
     {
-        if (($model = Post::findOne($id)) !== null) {
+        if (($model = PostLike::findOne($id)) !== null) {
             return $model;
         }
         throw new NotFoundHttpException('请求的页面不存在。');

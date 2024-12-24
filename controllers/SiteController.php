@@ -1,4 +1,20 @@
 <?php
+/**
+ * SiteController 类负责管理网站的前端控制逻辑，包括用户认证、内容展示和权限管理等功能。
+ * 该控制器使用了 Yii2 框架中的一些重要组件，如 AccessControl 和 VerbFilter，以确保只有经过身份验证的用户才能执行特定操作。
+ * 
+ * 主要功能：
+ * 1. **首页展示**：通过 actionIndex 方法渲染网站的首页。
+ * 2. **用户登录与注销**：actionLogin 和 actionLogout 方法分别处理用户的登录和注销请求，其中登录后根据用户角色重定向到不同的页面。
+ * 3. **用户注册与验证**：actionRegister 方法处理用户注册，包括发送验证邮件和注册逻辑；actionFind 方法用于找回密码功能。
+ * 4. **联系管理员**：actionContact 方法允许用户通过表单与管理员联系，支持发送消息并在成功后提供反馈。
+ * 5. **关于页面**：actionAbout 方法返回关于页面的视图。
+ * 6. **权限管理**：actionInitPermissions 方法用于初始化用户角色及其权限，支持后台管理功能。
+ * 7. **文章管理**：包括创建文章（actionCreatepost）、查看文章（actionViewpost）等功能，使用 ActiveDataProvider 实现分页展示。
+ * 8. **测试功能**：actionTest 方法用于测试文章点赞功能，包括正常点赞和重复点赞的验证。
+ * 
+ * 该控制器的实现充分利用了 Yii2 的 MVC 架构，确保了代码的可维护性和扩展性。所有的用户输入均经过相应模型的验证，确保数据的安全性和完整性。同时，通过使用闪存消息（flash messages），在用户操作后给予即时反馈，提升用户体验。
+ */
 
 namespace app\controllers;
 

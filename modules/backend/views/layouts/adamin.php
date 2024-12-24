@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Team: 喵喵大魔王队
+ * Coding by 胡进喆 2213045
+ * Date: 2024-12-18
+ * This is the main layout 
+ */
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -244,6 +249,11 @@ $this->beginPage();
         <li class="nav-item">
             <a class="nav-link" href="<?= \yii\helpers\Url::to(['commentlike/index']) ?>">
                 <i class="fa fa-cogs"></i> 评论点赞
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= \yii\helpers\Url::to(['feedback/index']) ?>">
+                <i class="fa fa-cogs"></i> 留言管理
             </a>
         </li>
         <li class="nav-item">

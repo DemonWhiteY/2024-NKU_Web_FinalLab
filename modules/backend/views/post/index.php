@@ -1,4 +1,11 @@
 <?php
+/**
+ * Team: 喵喵大魔王队
+ * Coding by 胡进喆 2213045
+ * Date: 2024-12-14
+ * This is the main layout of Backend-Post.
+ */
+
 use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
@@ -56,7 +63,7 @@ $this->registerCssFile('@web/css/backend/custom.css', ['depends' => \yii\web\Jqu
                             'title' => '删除',
                             'data' => [
                                 'confirm' => '确定要删除此 Post 吗？',
-                                'method' => 'post',
+                              
                             ],
                         ]);
                     },
